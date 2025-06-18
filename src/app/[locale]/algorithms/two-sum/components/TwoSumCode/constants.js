@@ -53,11 +53,8 @@ export const twoPointersJavaScript = `/**
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    // Criar array com índices originais
-    const indexedNums = nums.map((num, index) => ({ num, originalIndex: index }));
     
-    // Ordenar por valor
-    indexedNums.sort((a, b) => a.num - b.num);
+    nums.sort((a, b) => a.num - b.num);
     
     let left = 0;
     let right = indexedNums.length - 1;
@@ -89,7 +86,6 @@ export const twoPointersPython = `def twoSum(nums, target):
     :type target: int
     :rtype: List[int]
     """
-    # Criar lista com índices originais
     indexed_nums = [(num, i) for i, num in enumerate(nums)]
     
     # Ordenar por valor
