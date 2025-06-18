@@ -31,13 +31,14 @@ import {
 import { useTwoSum } from "../../contexts/TwoSumContext";
 import { useTranslations } from "next-intl";
 import { PREDEFINED_EXAMPLES, INITIAL_STATE, SPEED_OPTIONS } from "./constants";
-import { customExampleSchema } from "@/lib/validations";
+import { createValidationSchemas, parseArrayString } from "./utils/validations";
 
 const TwoSumSolution = () => {
   const { method } = useTwoSum();
   const t = useTranslations("twoSum.solution");
   const tMethods = useTranslations("twoSum.methods");
   const tSpeed = useTranslations("twoSum.solution.speedOptions");
+  const tValidation = useTranslations();
 
   const [state, setState] = useState({
     ...INITIAL_STATE,
@@ -466,6 +467,7 @@ const TwoSumSolution = () => {
 
   const applyCustomization = () => {
     try {
+      const { customExampleSchema } = createValidationSchemas(tValidation);
       const validation = customExampleSchema.safeParse(customInput);
 
       if (!validation.success) {
@@ -479,7 +481,7 @@ const TwoSumSolution = () => {
 
       setValidationErrors({});
 
-      const nums = customInput.nums.split(",").map((n) => parseInt(n.trim()));
+      const nums = parseArrayString(customInput.nums);
       const target = parseInt(customInput.target);
 
       setState((prev) => ({
