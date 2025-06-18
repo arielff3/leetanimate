@@ -10,19 +10,14 @@ export function SettingsProvider({ children }) {
 
   // Load settings from localStorage on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const savedLocale = localStorage.getItem("locale");
+    const savedTheme = localStorage.getItem("theme") || "system";
+    const savedLocale = localStorage.getItem("locale") || "pt";
     
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-    
-    if (savedLocale) {
-      setLocale(savedLocale);
-    }
+    setTheme(savedTheme);
+    setLocale(savedLocale);
   }, []);
 
-  // Apply theme to document
+  // Apply theme to document (sincronizar com o script inline)
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
@@ -44,9 +39,11 @@ export function SettingsProvider({ children }) {
     setLocale(newLocale);
     localStorage.setItem("locale", newLocale);
     
-    // Simple reload for now - will improve later
+    // Garantir que o tema seja preservado ao trocar idioma
     if (typeof window !== 'undefined') {
       const currentPath = window.location.pathname.replace(/^\/[a-z]{2}/, '') || '/';
+      // Forçar salvamento do tema antes da navegação
+      localStorage.setItem("theme", theme);
       window.location.href = `/${newLocale}${currentPath}`;
     }
   };

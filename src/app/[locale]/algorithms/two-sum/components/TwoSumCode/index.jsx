@@ -14,7 +14,7 @@ import {
   hashMapPython,
   twoPointersJavaScript,
   twoPointersPython,
-  algorithmExplanations
+  getAlgorithmExplanations
 } from "./constants";
 
 export default function TwoSumCode() {
@@ -22,6 +22,7 @@ export default function TwoSumCode() {
   const { method } = useTwoSum();
   const t = useTranslations('twoSum.code');
   const tMethods = useTranslations('twoSum.methods');
+  const tMain = useTranslations();
 
   const getCurrentCode = () => {
     if (method === "hashmap") {
@@ -39,6 +40,7 @@ export default function TwoSumCode() {
     return method === "hashmap" ? tMethods('hashmap') : tMethods('twopointers');
   };
 
+  const algorithmExplanations = getAlgorithmExplanations(tMain);
   const currentExplanation = algorithmExplanations[method];
 
   return (

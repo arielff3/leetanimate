@@ -61,12 +61,12 @@
       "assumption": "Você pode assumir que cada entrada terá exatamente uma solução, e você não pode usar o mesmo elemento duas vezes.",
       "order": "Você pode retornar a resposta em qualquer ordem.",
       "examples": "Exemplos",
-      "example1": "Exemplo 1:",
-      "example2": "Exemplo 2:",
-      "example3": "Exemplo 3:",
-      "input": "Entrada:",
-      "output": "Saída:",
-      "explanation": "Explicação:",
+      "example1": "Exemplo 1",
+      "example2": "Exemplo 2",
+      "example3": "Exemplo 3",
+      "input": "Entrada",
+      "output": "Saída",
+      "explanation": "Explicação",
       "example1Explanation": "Porque nums[0] + nums[1] == 9, retornamos [0, 1].",
       "constraints": "Restrições",
       "constraint1": "2 ≤ nums.length ≤ 10⁴",
@@ -83,11 +83,11 @@
       "copy": "Copiar",
       "solution": "Solução {method}",
       "algorithmExplanation": "Explicação do Algoritmo - {method}",
-      "approach": "Abordagem:",
-      "complexity": "Complexidade:",
-      "time": "Tempo:",
-      "space": "Espaço:",
-      "steps": "Passos do Algoritmo:"
+      "approach": "Abordagem",
+      "complexity": "Complexidade",
+      "time": "Tempo",
+      "space": "Espaço",
+      "steps": "Passos do Algoritmo"
     },
     "preview": {
       "title": "Prévia da Animação - {method}",
@@ -131,13 +131,48 @@
       "currentStatus": "Status Atual",
       "algorithmSelected": "Algoritmo selecionado: {method}",
       "solutionFound": "Solução encontrada nos índices [{indices}]!",
-      "predefinedExamples": "Exemplos Pré-definidos:",
+      "predefinedExamples": "Exemplos Pré-definidos",
       "example": "Exemplo",
       "checking": "Verificando",
       "lookingForComplement": "procurando complemento",
       "noSolutionFound": "Nenhuma solução encontrada para este array e target.",
       "leftPointer": "L",
       "rightPointer": "R"
+    },
+    "algorithmExplanations": {
+      "hashmap": {
+        "title": "Hash Map (Uma Passada)",
+        "description": "Esta solução utiliza um hash map para armazenar os números já visitados e seus índices. Para cada elemento, calculamos o complemento (target - elemento atual) e verificamos se ele já existe no hash map.",
+        "complexity": {
+          "time": "O(n) - onde n é o número de elementos no array",
+          "space": "O(n) - no pior caso, armazenamos todos os elementos no hash map"
+        },
+        "steps": [
+          "Criar um hash map vazio",
+          "Para cada elemento no array:",
+          "• Calcular o complemento (target - elemento atual)",
+          "• Se o complemento existir no hash map, retornar os índices",
+          "• Caso contrário, adicionar o elemento atual e seu índice ao hash map",
+          "Continuar até encontrar a solução"
+        ]
+      },
+      "twopointers": {
+        "title": "Two Pointers",
+        "description": "Esta solução primeiro cria um array com os valores e seus índices originais, depois ordena por valor. Usa dois ponteiros: um no início (left) e outro no fim (right). Move os ponteiros baseado na soma atual comparada com o target.",
+        "complexity": {
+          "time": "O(n log n) - devido à ordenação do array",
+          "space": "O(n) - para armazenar o array com índices originais"
+        },
+        "steps": [
+          "Criar array com valores e índices originais",
+          "Ordenar o array por valor",
+          "Inicializar ponteiros left=0 e right=length-1",
+          "Enquanto left < right:",
+          "• Se soma == target: retornar índices originais",
+          "• Se soma < target: mover left para direita",
+          "• Se soma > target: mover right para esquerda"
+        ]
+      }
     }
   }
 } 

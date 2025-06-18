@@ -116,39 +116,41 @@ export const twoPointersPython = `def twoSum(nums, target):
 # target = 9
 # print(twoSum(nums, target))  # [0, 1]`;
 
-// Explanations for each method
-export const algorithmExplanations = {
-  hashmap: {
-    title: "Hash Map (Uma Passada)",
-    description: "Esta solução utiliza um hash map para armazenar os números já visitados e seus índices. Para cada elemento, calculamos o complemento (target - elemento atual) e verificamos se ele já existe no hash map.",
-    complexity: {
-      time: "O(n) - onde n é o número de elementos no array",
-      space: "O(n) - no pior caso, armazenamos todos os elementos no hash map"
+// Function to get algorithm explanations with translations
+export const getAlgorithmExplanations = (t) => {
+  return {
+    hashmap: {
+      title: t('twoSum.algorithmExplanations.hashmap.title'),
+      description: t('twoSum.algorithmExplanations.hashmap.description'),
+      complexity: {
+        time: t('twoSum.algorithmExplanations.hashmap.complexity.time'),
+        space: t('twoSum.algorithmExplanations.hashmap.complexity.space')
+      },
+      steps: [
+        t('twoSum.algorithmExplanations.hashmap.steps.0'),
+        t('twoSum.algorithmExplanations.hashmap.steps.1'),
+        t('twoSum.algorithmExplanations.hashmap.steps.2'),
+        t('twoSum.algorithmExplanations.hashmap.steps.3'),
+        t('twoSum.algorithmExplanations.hashmap.steps.4'),
+        t('twoSum.algorithmExplanations.hashmap.steps.5')
+      ]
     },
-    steps: [
-      "Criar um hash map vazio",
-      "Para cada elemento no array:",
-      "• Calcular o complemento (target - elemento atual)",
-      "• Se o complemento existir no hash map, retornar os índices",
-      "• Caso contrário, adicionar o elemento atual e seu índice ao hash map",
-      "Continuar até encontrar a solução"
-    ]
-  },
-  twopointers: {
-    title: "Two Pointers",
-    description: "Esta solução primeiro cria um array com os valores e seus índices originais, depois ordena por valor. Usa dois ponteiros: um no início (left) e outro no fim (right). Move os ponteiros baseado na soma atual comparada com o target.",
-    complexity: {
-      time: "O(n log n) - devido à ordenação do array",
-      space: "O(n) - para armazenar o array com índices originais"
-    },
-    steps: [
-      "Criar array com valores e índices originais",
-      "Ordenar o array por valor",
-      "Inicializar ponteiros left=0 e right=length-1",
-      "Enquanto left < right:",
-      "• Se soma == target: retornar índices originais",
-      "• Se soma < target: mover left para direita",
-      "• Se soma > target: mover right para esquerda"
-    ]
-  }
+    twopointers: {
+      title: t('twoSum.algorithmExplanations.twopointers.title'),
+      description: t('twoSum.algorithmExplanations.twopointers.description'),
+      complexity: {
+        time: t('twoSum.algorithmExplanations.twopointers.complexity.time'),
+        space: t('twoSum.algorithmExplanations.twopointers.complexity.space')
+      },
+      steps: [
+        t('twoSum.algorithmExplanations.twopointers.steps.0'),
+        t('twoSum.algorithmExplanations.twopointers.steps.1'),
+        t('twoSum.algorithmExplanations.twopointers.steps.2'),
+        t('twoSum.algorithmExplanations.twopointers.steps.3'),
+        t('twoSum.algorithmExplanations.twopointers.steps.4'),
+        t('twoSum.algorithmExplanations.twopointers.steps.5'),
+        t('twoSum.algorithmExplanations.twopointers.steps.6')
+      ]
+    }
+  };
 }; 

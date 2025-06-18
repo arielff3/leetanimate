@@ -61,12 +61,12 @@
       "assumption": "You may assume that each input would have exactly one solution, and you may not use the same element twice.",
       "order": "You can return the answer in any order.",
       "examples": "Examples",
-      "example1": "Example 1:",
-      "example2": "Example 2:",
-      "example3": "Example 3:",
-      "input": "Input:",
-      "output": "Output:",
-      "explanation": "Explanation:",
+      "example1": "Example 1",
+      "example2": "Example 2",
+      "example3": "Example 3",
+      "input": "Input",
+      "output": "Output",
+      "explanation": "Explanation",
       "example1Explanation": "Because nums[0] + nums[1] == 9, we return [0, 1].",
       "constraints": "Constraints",
       "constraint1": "2 ≤ nums.length ≤ 10⁴",
@@ -83,11 +83,11 @@
       "copy": "Copy",
       "solution": "{method} Solution",
       "algorithmExplanation": "Algorithm Explanation - {method}",
-      "approach": "Approach:",
-      "complexity": "Complexity:",
-      "time": "Time:",
-      "space": "Space:",
-      "steps": "Algorithm Steps:"
+      "approach": "Approach",
+      "complexity": "Complexity",
+      "time": "Time",
+      "space": "Space",
+      "steps": "Algorithm Steps"
     },
     "preview": {
       "title": "Animation Preview - {method}",
@@ -131,13 +131,48 @@
       "currentStatus": "Current Status",
       "algorithmSelected": "Selected algorithm: {method}",
       "solutionFound": "Solution found at indices [{indices}]!",
-      "predefinedExamples": "Predefined Examples:",
+      "predefinedExamples": "Predefined Examples",
       "example": "Example",
       "checking": "Checking",
       "lookingForComplement": "looking for complement",
       "noSolutionFound": "No solution found for this array and target.",
       "leftPointer": "L",
       "rightPointer": "R"
+    },
+    "algorithmExplanations": {
+      "hashmap": {
+        "title": "Hash Map (One Pass)",
+        "description": "This solution uses a hash map to store the numbers we've already visited and their indices. For each element, we calculate the complement (target - current element) and check if it already exists in the hash map.",
+        "complexity": {
+          "time": "O(n) - where n is the number of elements in the array",
+          "space": "O(n) - in the worst case, we store all elements in the hash map"
+        },
+        "steps": [
+          "Create an empty hash map",
+          "For each element in the array:",
+          "• Calculate the complement (target - current element)",
+          "• If the complement exists in the hash map, return the indices",
+          "• Otherwise, add the current element and its index to the hash map",
+          "Continue until solution is found"
+        ]
+      },
+      "twopointers": {
+        "title": "Two Pointers",
+        "description": "This solution first creates an array with values and their original indices, then sorts by value. It uses two pointers: one at the beginning (left) and another at the end (right). Move pointers based on the current sum compared to the target.",
+        "complexity": {
+          "time": "O(n log n) - due to array sorting",
+          "space": "O(n) - to store the array with original indices"
+        },
+        "steps": [
+          "Create array with values and original indices",
+          "Sort the array by value",
+          "Initialize pointers left=0 and right=length-1",
+          "While left < right:",
+          "• If sum == target: return original indices",
+          "• If sum < target: move left pointer right",
+          "• If sum > target: move right pointer left"
+        ]
+      }
     }
   }
 } 
