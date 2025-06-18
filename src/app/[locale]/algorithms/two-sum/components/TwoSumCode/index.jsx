@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { useTwoSum } from "@/app/algorithms/two-sum/contexts/TwoSumContext";
+import { useTwoSum } from "../../contexts/TwoSumContext";
+import { useTranslations } from "next-intl";
 import {
   hashMapJavaScript,
   hashMapPython,
@@ -19,6 +20,8 @@ import {
 export default function TwoSumCode() {
   const [activeLanguage, setActiveLanguage] = useState("javascript");
   const { method } = useTwoSum();
+  const t = useTranslations('twoSum.code');
+  const tMethods = useTranslations('twoSum.methods');
 
   const getCurrentCode = () => {
     if (method === "hashmap") {
@@ -33,7 +36,7 @@ export default function TwoSumCode() {
   };
 
   const getMethodTitle = () => {
-    return method === "hashmap" ? "Hash Map" : "Two Pointers";
+    return method === "hashmap" ? tMethods('hashmap') : tMethods('twopointers');
   };
 
   const currentExplanation = algorithmExplanations[method];
@@ -42,20 +45,20 @@ export default function TwoSumCode() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Implementações - {getMethodTitle()}</CardTitle>
+          <CardTitle className="text-lg">{t('implementations', { method: getMethodTitle() })}</CardTitle>
         </CardHeader>
         <CardContent>
           <Tabs value={activeLanguage} onValueChange={setActiveLanguage} className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="javascript">JavaScript</TabsTrigger>
-              <TabsTrigger value="python">Python</TabsTrigger>
+              <TabsTrigger value="javascript">{t('javascript')}</TabsTrigger>
+              <TabsTrigger value="python">{t('python')}</TabsTrigger>
             </TabsList>
             
             <TabsContent value="javascript" className="mt-4">
               <div className="relative">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-sm font-medium text-muted-foreground">
-                    JavaScript - Solução {getMethodTitle()}
+                    {t('javascript')} - {t('solution', { method: getMethodTitle() })}
                   </h3>
                   <div className="flex gap-2">
                     <Button
@@ -65,7 +68,7 @@ export default function TwoSumCode() {
                       className="gap-2"
                     >
                       <Copy className="h-4 w-4" />
-                      Copiar
+                      {t('copy')}
                     </Button>
                   </div>
                 </div>
@@ -89,7 +92,7 @@ export default function TwoSumCode() {
               <div className="relative">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-sm font-medium text-muted-foreground">
-                    Python - Solução {getMethodTitle()}
+                    {t('python')} - {t('solution', { method: getMethodTitle() })}
                   </h3>
                   <div className="flex gap-2">
                     <Button
@@ -99,7 +102,7 @@ export default function TwoSumCode() {
                       className="gap-2"
                     >
                       <Copy className="h-4 w-4" />
-                      Copiar
+                      {t('copy')}
                     </Button>
                   </div>
                 </div>
@@ -125,26 +128,26 @@ export default function TwoSumCode() {
       {/* Algorithm Explanation */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Explicação do Algoritmo - {getMethodTitle()}</CardTitle>
+          <CardTitle className="text-lg">{t('algorithmExplanation', { method: getMethodTitle() })}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <h4 className="font-semibold mb-2">Abordagem: {currentExplanation.title}</h4>
+            <h4 className="font-semibold mb-2">{t('approach')}: {currentExplanation.title}</h4>
             <p className="text-muted-foreground leading-relaxed">
               {currentExplanation.description}
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-2">Complexidade:</h4>
+            <h4 className="font-semibold mb-2">{t('complexity')}:</h4>
             <ul className="space-y-1 text-muted-foreground">
-              <li>• <strong>Tempo:</strong> {currentExplanation.complexity.time}</li>
-              <li>• <strong>Espaço:</strong> {currentExplanation.complexity.space}</li>
+              <li>• <strong>{t('time')}:</strong> {currentExplanation.complexity.time}</li>
+              <li>• <strong>{t('space')}:</strong> {currentExplanation.complexity.space}</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-2">Passos do Algoritmo:</h4>
+            <h4 className="font-semibold mb-2">{t('steps')}:</h4>
             <ol className="space-y-1 text-muted-foreground list-decimal list-inside">
               {currentExplanation.steps.map((step, index) => (
                 <li key={index} className={step.startsWith('•') ? 'ml-4' : ''}>

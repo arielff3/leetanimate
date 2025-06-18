@@ -1,0 +1,143 @@
+{
+  "common": {
+    "settings": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "portuguese": "Portuguese",
+    "english": "English"
+  },
+  "home": {
+    "title": "Animated LeetCode Algorithms",
+    "subtitle": "Visualize and learn LeetCode algorithms through interactive educational animations.",
+    "categories": {
+      "arrays": "Arrays"
+    },
+    "algorithms": {
+      "twoSum": {
+        "title": "Two Sum",
+        "description": "Find two numbers in an array that add up to a specific target value."
+      },
+      "threeSum": {
+        "title": "Three Sum",
+        "description": "Find all unique triplets in the array that sum to zero."
+      }
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium", 
+      "hard": "Hard"
+    }
+  },
+  "twoSum": {
+    "title": "Two Sum",
+    "titleWithMethod": "Two Sum - {method}",
+    "backButton": "Back",
+    "category": "Arrays • Easy",
+    "methodSelector": "Solution Method",
+    "selectMethod": "Select method",
+    "methods": {
+      "hashmap": "Hash Map",
+      "twopointers": "Two Pointers"
+    },
+    "tags": {
+      "hashMap": "#hash-map",
+      "onTime": "#O(n)-time",
+      "onSpace": "#O(n)-space",
+      "twoPointers": "#two-pointers",
+      "nlogTime": "#O(nlogn)-time",
+      "o1Space": "#O(1)-space"
+    },
+    "tabs": {
+      "description": "Description",
+      "code": "Code",
+      "solution": "Solution"
+    },
+    "description": {
+      "title": "Problem Statement",
+      "problem": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target.",
+      "assumption": "You may assume that each input would have exactly one solution, and you may not use the same element twice.",
+      "order": "You can return the answer in any order.",
+      "examples": "Examples",
+      "example1": "Example 1:",
+      "example2": "Example 2:",
+      "example3": "Example 3:",
+      "input": "Input:",
+      "output": "Output:",
+      "explanation": "Explanation:",
+      "example1Explanation": "Because nums[0] + nums[1] == 9, we return [0, 1].",
+      "constraints": "Constraints",
+      "constraint1": "2 ≤ nums.length ≤ 10⁴",
+      "constraint2": "-10⁹ ≤ nums[i] ≤ 10⁹",
+      "constraint3": "-10⁹ ≤ target ≤ 10⁹",
+      "constraint4": "Only one valid answer exists.",
+      "followUp": "Follow-up",
+      "followUpText": "Can you come up with an algorithm that is less than O(n²) time complexity?"
+    },
+    "code": {
+      "implementations": "Implementations - {method}",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copy",
+      "solution": "{method} Solution",
+      "algorithmExplanation": "Algorithm Explanation - {method}",
+      "approach": "Approach:",
+      "complexity": "Complexity:",
+      "time": "Time:",
+      "space": "Space:",
+      "steps": "Algorithm Steps:"
+    },
+    "preview": {
+      "title": "Animation Preview - {method}",
+      "array": "nums = {nums}, target = {target}",
+      "play": "Run Preview",
+      "pause": "Pause",
+      "restart": "Restart",
+      "status": {
+        "clickToStart": "Click to start ({method})",
+        "hashMapStep1": "Checking nums[0] = 2, looking for complement 7",
+        "hashMapStep2": "Checking nums[1] = 7, complement found!",
+        "twoPointersStep1": "L=0, R=3: 2+15=17 > 9, move R",
+        "twoPointersStep2": "L=0, R=2: 2+11=13 > 9, move R",
+        "twoPointersStep3": "L=0, R=1: 2+7=9 = target!",
+        "solutionFound": "✓ Solution found: [{indices}]"
+      }
+    },
+    "solution": {
+      "title": "Algorithm Visualization",
+      "execute": "Execute",
+      "pause": "Pause",
+      "restart": "Restart",
+      "nextStep": "Next Step",
+      "reset": "Reset",
+      "speed": "Speed",
+      "customize": "Customize",
+      "speedOptions": {
+        "slow": "Slow",
+        "normal": "Normal",
+        "fast": "Fast"
+      },
+      "customization": {
+        "title": "Customize Example",
+        "arrayLabel": "Array (comma separated)",
+        "targetLabel": "Target",
+        "apply": "Apply"
+      },
+      "visualization": "Visualization",
+      "array": "Array",
+      "target": "target = {target}",
+      "currentStatus": "Current Status",
+      "algorithmSelected": "Selected algorithm: {method}",
+      "solutionFound": "Solution found at indices [{indices}]!",
+      "predefinedExamples": "Predefined Examples:",
+      "example": "Example",
+      "checking": "Checking",
+      "lookingForComplement": "looking for complement",
+      "noSolutionFound": "No solution found for this array and target.",
+      "leftPointer": "L",
+      "rightPointer": "R"
+    }
+  }
+} 

@@ -5,27 +5,27 @@ export const SPEED_OPTIONS = {
   FAST: 500
 };
 
-// Exemplos pré-definidos
+// Exemplos pré-definidos (sem labels hardcoded)
 export const PREDEFINED_EXAMPLES = [
   {
     nums: [2, 7, 11, 15],
     target: 9,
-    label: "Exemplo 1: [2,7,11,15], target=9"
+    id: 1
   },
   {
     nums: [3, 2, 4],
     target: 6,
-    label: "Exemplo 2: [3,2,4], target=6"
+    id: 2
   },
   {
     nums: [1, 4, 9, 11, 12, 14, 15, 17],
     target: 31,
-    label: "Exemplo 3: [1,4,9,11,12,14,15,17], target=31"
+    id: 3
   },
   {
     nums: [1, 2, 3, 4],
     target: 10,
-    label: "Exemplo 4: [1,2,3,4], target=10 (sem solução)"
+    id: 4
   }
 ];
 

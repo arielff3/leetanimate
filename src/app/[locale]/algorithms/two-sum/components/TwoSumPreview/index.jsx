@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Play, Pause } from "lucide-react";
-import { useTwoSum } from "@/app/algorithms/two-sum/contexts/TwoSumContext";
+import { useTwoSum } from "../../contexts/TwoSumContext";
+import { useTranslations } from "next-intl";
 
 export default function TwoSumPreview() {
   const { method } = useTwoSum();
+  const t = useTranslations('twoSum');
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [foundSolution, setFoundSolution] = useState(null);
@@ -88,16 +90,16 @@ export default function TwoSumPreview() {
 
   const getStatusMessage = () => {
     if (method === "hashmap") {
-      if (currentIndex === -1) return "Clique para iniciar (Hash Map)";
-      if (currentIndex === 0) return "Verificando nums[0] = 2, procurando complemento 7";
-      if (currentIndex === 1) return "Verificando nums[1] = 7, encontrado complemento!";
-      if (foundSolution) return "✓ Solução encontrada: [0, 1]";
+      if (currentIndex === -1) return t('preview.status.clickToStart', { method: t('methods.hashmap') });
+      if (currentIndex === 0) return t('preview.status.hashMapStep1');
+      if (currentIndex === 1) return t('preview.status.hashMapStep2');
+      if (foundSolution) return t('preview.status.solutionFound', { indices: foundSolution.join(', ') });
     } else {
-      if (leftPointer === -1) return "Clique para iniciar (Two Pointers)";
-      if (leftPointer === 0 && rightPointer === 3) return "L=0, R=3: 2+15=17 > 9, mover R";
-      if (leftPointer === 0 && rightPointer === 2) return "L=0, R=2: 2+11=13 > 9, mover R";
-      if (leftPointer === 0 && rightPointer === 1) return "L=0, R=1: 2+7=9 = target!";
-      if (foundSolution) return "✓ Solução encontrada: [0, 1]";
+      if (leftPointer === -1) return t('preview.status.clickToStart', { method: t('methods.twopointers') });
+      if (leftPointer === 0 && rightPointer === 3) return t('preview.status.twoPointersStep1');
+      if (leftPointer === 0 && rightPointer === 2) return t('preview.status.twoPointersStep2');
+      if (leftPointer === 0 && rightPointer === 1) return t('preview.status.twoPointersStep3');
+      if (foundSolution) return t('preview.status.solutionFound', { indices: foundSolution.join(', ') });
     }
     return "";
   };
@@ -110,10 +112,10 @@ export default function TwoSumPreview() {
         <div className="text-center space-y-4">
           <div>
             <h3 className="text-lg font-semibold mb-2">
-              Prévia da Animação - {method === "hashmap" ? "Hash Map" : "Two Pointers"}
+              {t('preview.title', { method: method === "hashmap" ? t('methods.hashmap') : t('methods.twopointers') })}
             </h3>
             <p className="text-sm text-muted-foreground">
-              nums = [2, 7, 11, 15], target = {target}
+              {t('preview.array', { nums: '[2, 7, 11, 15]', target })}
             </p>
           </div>
           
@@ -165,7 +167,7 @@ export default function TwoSumPreview() {
           {/* Control */}
           <Button onClick={togglePlay} variant="outline" size="sm" className="gap-2">
             {isPlaying ? <Pause className="h-3 w-3" /> : <Play className="h-3 w-3" />}
-            {isPlaying ? 'Pausar' : foundSolution ? 'Reiniciar' : 'Executar Prévia'}
+            {isPlaying ? t('preview.pause') : foundSolution ? t('preview.restart') : t('preview.play')}
           </Button>
         </div>
       </CardContent>

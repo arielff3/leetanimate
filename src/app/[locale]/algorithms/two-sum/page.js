@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -22,13 +23,18 @@ import { TwoSumProvider, useTwoSum } from "./contexts/TwoSumContext";
 function TwoSumContent() {
   const [activeTab, setActiveTab] = useState("description");
   const { method, setMethod } = useTwoSum();
+  const locale = useLocale();
+  const t = useTranslations('twoSum');
 
   const getMethodInfo = (selectedMethod) => {
     return selectedMethod === "hashmap"
-      ? { name: "Hash Map", tags: ["#hash-map", "#O(n)-tempo", "#O(n)-espaço"] }
+      ? { 
+          name: t('methods.hashmap'), 
+          tags: [t('tags.hashMap'), t('tags.onTime'), t('tags.onSpace')] 
+        }
       : {
-          name: "Two Pointers",
-          tags: ["#two-pointers", "#O(nlogn)-tempo", "#O(1)-espaço"],
+          name: t('methods.twopointers'),
+          tags: [t('tags.twoPointers'), t('tags.nlogTime'), t('tags.o1Space')],
         };
   };
 
@@ -41,16 +47,16 @@ function TwoSumContent() {
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
             <div>
-              <Link href="/">
+              <Link href={`/${locale}`}>
                 <Button variant="ghost" size="sm" className="gap-2 mb-2">
                   <ArrowLeft className="h-4 w-4" />
-                  Voltar
+                  {t('backButton')}
                 </Button>
               </Link>
               <h1 className="text-3xl font-bold text-foreground">
-                #1. Two Sum
+                #1. {t('title')}
               </h1>
-              <p className="text-muted-foreground">Arrays • Easy</p>
+              <p className="text-muted-foreground">{t('category')}</p>
               <div className="flex gap-2 mt-2">
                 {methodInfo.tags.map((tag, index) => (
                   <span
@@ -67,15 +73,15 @@ function TwoSumContent() {
           {/* Method Selector */}
           <div className="flex flex-col items-end gap-2">
             <label className="text-sm font-medium text-muted-foreground">
-              Método de Solução
+              {t('methodSelector')}
             </label>
             <Select value={method} onValueChange={setMethod}>
               <SelectTrigger className="min-w-[160px]">
-                <SelectValue placeholder="Selecione o método" />
+                <SelectValue placeholder={t('selectMethod')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="hashmap">Hash Map</SelectItem>
-                <SelectItem value="twopointers">Two Pointers</SelectItem>
+                <SelectItem value="hashmap">{t('methods.hashmap')}</SelectItem>
+                <SelectItem value="twopointers">{t('methods.twopointers')}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -89,7 +95,7 @@ function TwoSumContent() {
         {/* Main Content */}
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>Two Sum - {methodInfo.name}</CardTitle>
+            <CardTitle>{t('titleWithMethod', { method: methodInfo.name })}</CardTitle>
           </CardHeader>
           <CardContent>
             <Tabs
@@ -98,9 +104,9 @@ function TwoSumContent() {
               className="w-full"
             >
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="description">Description</TabsTrigger>
-                <TabsTrigger value="code">Code</TabsTrigger>
-                <TabsTrigger value="solution">Solution</TabsTrigger>
+                <TabsTrigger value="description">{t('tabs.description')}</TabsTrigger>
+                <TabsTrigger value="code">{t('tabs.code')}</TabsTrigger>
+                <TabsTrigger value="solution">{t('tabs.solution')}</TabsTrigger>
               </TabsList>
 
               <TabsContent value="description" className="mt-6">

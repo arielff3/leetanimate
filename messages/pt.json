@@ -1,0 +1,143 @@
+{
+  "common": {
+    "settings": "Configurações",
+    "theme": "Tema",
+    "language": "Idioma",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "portuguese": "Português",
+    "english": "Inglês"
+  },
+  "home": {
+    "title": "Algoritmos LeetCode Animados",
+    "subtitle": "Visualize e aprenda algoritmos do LeetCode através de animações interativas educativas.",
+    "categories": {
+      "arrays": "Arrays"
+    },
+    "algorithms": {
+      "twoSum": {
+        "title": "Two Sum",
+        "description": "Encontre dois números em um array que somem um valor alvo específico."
+      },
+      "threeSum": {
+        "title": "Three Sum", 
+        "description": "Encontre todos os triplets únicos no array que somem zero."
+      }
+    },
+    "difficulty": {
+      "easy": "Fácil",
+      "medium": "Médio",
+      "hard": "Difícil"
+    }
+  },
+  "twoSum": {
+    "title": "Two Sum",
+    "titleWithMethod": "Two Sum - {method}",
+    "backButton": "Voltar",
+    "category": "Arrays • Fácil",
+    "methodSelector": "Método de Solução",
+    "selectMethod": "Selecione o método",
+    "methods": {
+      "hashmap": "Hash Map",
+      "twopointers": "Two Pointers"
+    },
+    "tags": {
+      "hashMap": "#hash-map",
+      "onTime": "#O(n)-tempo",
+      "onSpace": "#O(n)-espaço",
+      "twoPointers": "#two-pointers",
+      "nlogTime": "#O(nlogn)-tempo",
+      "o1Space": "#O(1)-espaço"
+    },
+    "tabs": {
+      "description": "Descrição",
+      "code": "Código",
+      "solution": "Solução"
+    },
+    "description": {
+      "title": "Enunciado do Problema",
+      "problem": "Dado um array de inteiros nums e um inteiro target, retorne os índices dos dois números que somam o valor target.",
+      "assumption": "Você pode assumir que cada entrada terá exatamente uma solução, e você não pode usar o mesmo elemento duas vezes.",
+      "order": "Você pode retornar a resposta em qualquer ordem.",
+      "examples": "Exemplos",
+      "example1": "Exemplo 1:",
+      "example2": "Exemplo 2:",
+      "example3": "Exemplo 3:",
+      "input": "Entrada:",
+      "output": "Saída:",
+      "explanation": "Explicação:",
+      "example1Explanation": "Porque nums[0] + nums[1] == 9, retornamos [0, 1].",
+      "constraints": "Restrições",
+      "constraint1": "2 ≤ nums.length ≤ 10⁴",
+      "constraint2": "-10⁹ ≤ nums[i] ≤ 10⁹",
+      "constraint3": "-10⁹ ≤ target ≤ 10⁹",
+      "constraint4": "Apenas uma resposta válida existe.",
+      "followUp": "Pergunta de Acompanhamento",
+      "followUpText": "Você consegue criar um algoritmo que seja mais eficiente que O(n²) em complexidade temporal?"
+    },
+    "code": {
+      "implementations": "Implementações - {method}",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copiar",
+      "solution": "Solução {method}",
+      "algorithmExplanation": "Explicação do Algoritmo - {method}",
+      "approach": "Abordagem:",
+      "complexity": "Complexidade:",
+      "time": "Tempo:",
+      "space": "Espaço:",
+      "steps": "Passos do Algoritmo:"
+    },
+    "preview": {
+      "title": "Prévia da Animação - {method}",
+      "array": "nums = {nums}, target = {target}",
+      "play": "Executar Prévia",
+      "pause": "Pausar",
+      "restart": "Reiniciar",
+      "status": {
+        "clickToStart": "Clique para iniciar ({method})",
+        "hashMapStep1": "Verificando nums[0] = 2, procurando complemento 7",
+        "hashMapStep2": "Verificando nums[1] = 7, encontrado complemento!",
+        "twoPointersStep1": "L=0, R=3: 2+15=17 > 9, mover R",
+        "twoPointersStep2": "L=0, R=2: 2+11=13 > 9, mover R",
+        "twoPointersStep3": "L=0, R=1: 2+7=9 = target!",
+        "solutionFound": "✓ Solução encontrada: [{indices}]"
+      }
+    },
+    "solution": {
+      "title": "Visualização do Algoritmo",
+      "execute": "Executar",
+      "pause": "Pausar",
+      "restart": "Reiniciar",
+      "nextStep": "Próximo Passo",
+      "reset": "Resetar",
+      "speed": "Velocidade",
+      "customize": "Personalizar",
+      "speedOptions": {
+        "slow": "Lento",
+        "normal": "Normal",
+        "fast": "Rápido"
+      },
+      "customization": {
+        "title": "Personalizar Exemplo",
+        "arrayLabel": "Array (separado por vírgulas)",
+        "targetLabel": "Target",
+        "apply": "Aplicar"
+      },
+      "visualization": "Visualização",
+      "array": "Array",
+      "target": "target = {target}",
+      "currentStatus": "Status Atual",
+      "algorithmSelected": "Algoritmo selecionado: {method}",
+      "solutionFound": "Solução encontrada nos índices [{indices}]!",
+      "predefinedExamples": "Exemplos Pré-definidos:",
+      "example": "Exemplo",
+      "checking": "Verificando",
+      "lookingForComplement": "procurando complemento",
+      "noSolutionFound": "Nenhuma solução encontrada para este array e target.",
+      "leftPointer": "L",
+      "rightPointer": "R"
+    }
+  }
+} 
