@@ -1,3 +1,5 @@
+# 🚧 In development
+
 # 🎯 Animated LeetCode Algorithms
 
 <div align="center">
@@ -98,7 +100,7 @@ leetanimate/
 ## 🎨 Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
-- **Frontend**: React 19, TypeScript
+- **Frontend**: React 19
 - **Styling**: Tailwind CSS, shadcn/ui
 - **Animations**: Framer Motion
 - **Internationalization**: next-intl
