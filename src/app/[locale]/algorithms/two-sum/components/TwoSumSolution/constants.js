@@ -1,11 +1,9 @@
-// Configurações de velocidade da animação
 export const SPEED_OPTIONS = {
   SLOW: 2000,
   NORMAL: 1000,
   FAST: 500
 };
 
-// Exemplos pré-definidos (sem labels hardcoded)
 export const PREDEFINED_EXAMPLES = [
   {
     nums: [2, 7, 11, 15],
@@ -29,7 +27,6 @@ export const PREDEFINED_EXAMPLES = [
   }
 ];
 
-// Estados iniciais
 export const INITIAL_STATE = {
   isPlaying: false,
   currentStep: 0,

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
-export default function Home() {
+const Home = () => {
   const t = useTranslations('home');
   
   const algorithms = [
@@ -81,4 +81,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

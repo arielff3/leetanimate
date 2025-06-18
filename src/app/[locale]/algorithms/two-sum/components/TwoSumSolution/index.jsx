@@ -33,7 +33,7 @@ import { useTranslations } from "next-intl";
 import { PREDEFINED_EXAMPLES, INITIAL_STATE, SPEED_OPTIONS } from "./constants";
 import { customExampleSchema } from "@/lib/validations";
 
-export default function TwoSumSolution() {
+const TwoSumSolution = () => {
   const { method } = useTwoSum();
   const t = useTranslations("twoSum.solution");
   const tMethods = useTranslations("twoSum.methods");
@@ -41,7 +41,6 @@ export default function TwoSumSolution() {
 
   const [state, setState] = useState({
     ...INITIAL_STATE,
-    // Novas propriedades para informações detalhadas
     stepHistory: [],
     operationCount: 0,
     comparisons: 0,
@@ -128,7 +127,6 @@ export default function TwoSumSolution() {
       const newOperationCount = prev.operationCount + 1;
       const newComparisons = prev.comparisons + 1;
 
-      // Criar entrada no histórico
       const stepAction = `${t("verifying")} nums[${nextIndex}] = ${currentNum}`;
       const stepDetails = `${t("calculating")}: ${
         prev.target
@@ -179,7 +177,6 @@ export default function TwoSumSolution() {
         };
       }
 
-      // Adicionar ao hash map
       newHashMap.set(currentNum, nextIndex);
       const newHistory = [
         ...prev.stepHistory,
@@ -224,7 +221,6 @@ export default function TwoSumSolution() {
   const executeTwoPointersStep = () => {
     setState((prev) => {
       if (prev.leftPointer === -1) {
-        // Initialize two pointers
         const indexedNums = prev.nums.map((num, index) => ({
           num,
           originalIndex: index,
@@ -483,7 +479,6 @@ export default function TwoSumSolution() {
 
       setValidationErrors({});
 
-      // Parse the validated input
       const nums = customInput.nums.split(",").map((n) => parseInt(n.trim()));
       const target = parseInt(customInput.target);
 
@@ -502,7 +497,7 @@ export default function TwoSumSolution() {
         pointerMovements: [],
       }));
 
-      setSelectedExample(-1); // Custom example
+      setSelectedExample(-1);
       setShowCustomization(false);
     } catch (error) {
       console.error("Error applying customization:", error);
@@ -554,7 +549,6 @@ export default function TwoSumSolution() {
 
   return (
     <div className="space-y-6">
-      {/* Controls */}
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
@@ -631,7 +625,6 @@ export default function TwoSumSolution() {
             </Button>
           </div>
 
-          {/* Examples Selection */}
           <div className="mt-4">
             <h4 className="text-sm font-medium mb-2">
               {t("predefinedExamples")}
@@ -651,7 +644,6 @@ export default function TwoSumSolution() {
             </div>
           </div>
 
-          {/* Customization Panel */}
           {showCustomization && (
             <div className="mt-4 p-4 border rounded-lg bg-muted/50">
               <h4 className="text-sm font-medium mb-3">
@@ -709,7 +701,6 @@ export default function TwoSumSolution() {
         </CardContent>
       </Card>
 
-      {/* Performance Metrics */}
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
@@ -755,7 +746,6 @@ export default function TwoSumSolution() {
         </CardContent>
       </Card>
 
-      {/* Visualization */}
       <Card>
         <CardHeader>
           <CardTitle className="text-lg">{t("visualization")}</CardTitle>
@@ -824,7 +814,6 @@ export default function TwoSumSolution() {
                         : index}
                       ]
                     </div>
-                    {/* Pointer Labels */}
                     {isLeftPointer && (
                       <div className="absolute -top-6 text-xs font-bold text-purple-600">
                         {t("leftPointer")}
@@ -841,7 +830,6 @@ export default function TwoSumSolution() {
             </div>
           </div>
 
-          {/* Current Status */}
           <div className="bg-muted p-4 rounded-lg">
             <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
               <Clock className="h-4 w-4" />
@@ -910,7 +898,6 @@ export default function TwoSumSolution() {
         </CardContent>
       </Card>
 
-      {/* Hash Map Visualization (only for hashmap method) */}
       {method === "hashmap" && state.hashMap.size > 0 && (
         <Card>
           <CardHeader>
@@ -945,7 +932,6 @@ export default function TwoSumSolution() {
         </Card>
       )}
 
-      {/* Step History */}
       {state.stepHistory.length > 0 && (
         <Card>
           <CardHeader>
@@ -998,4 +984,6 @@ export default function TwoSumSolution() {
       )}
     </div>
   );
-}
+};
+
+export default TwoSumSolution;

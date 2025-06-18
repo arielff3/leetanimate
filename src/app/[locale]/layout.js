@@ -4,11 +4,7 @@ import { SettingsProvider } from "@/contexts/SettingsContext";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 
-export default async function LocaleLayout({ children, params }) {
-  const { locale } = await params;
-  
-  // Providing all messages to the client
-  // side is the easiest way to get started
+const LocaleLayout = async ({ children, params }) => {
   const messages = await getMessages();
 
   return (
@@ -20,4 +16,6 @@ export default async function LocaleLayout({ children, params }) {
       </SettingsProvider>
     </NextIntlClientProvider>
   );
-} 
+};
+
+export default LocaleLayout; 

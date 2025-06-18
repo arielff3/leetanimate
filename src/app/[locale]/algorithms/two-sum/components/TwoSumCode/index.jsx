@@ -17,7 +17,7 @@ import {
   getAlgorithmExplanations
 } from "./constants";
 
-export default function TwoSumCode() {
+const TwoSumCode = () => {
   const [activeLanguage, setActiveLanguage] = useState("javascript");
   const { method } = useTwoSum();
   const t = useTranslations('twoSum.code');
@@ -162,4 +162,6 @@ export default function TwoSumCode() {
       </Card>
     </div>
   );
-} 
+};
+
+export default TwoSumCode; 

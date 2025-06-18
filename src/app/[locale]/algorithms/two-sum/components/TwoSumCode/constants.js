@@ -1,10 +1,4 @@
-// Hash Map implementations
-export const hashMapJavaScript = `/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
+export const hashMapJavaScript = `var twoSum = function(nums, target) {
     const map = new Map();
     
     for (let i = 0; i < nums.length; i++) {
@@ -18,18 +12,9 @@ var twoSum = function(nums, target) {
     }
     
     return [];
-};
-
-// const nums = [2, 7, 11, 15];
-// const target = 9;
-// console.log(twoSum(nums, target)); // [0, 1]`;
+};`;
 
 export const hashMapPython = `def twoSum(nums, target):
-    """
-    :type nums: List[int]
-    :type target: int
-    :rtype: List[int]
-    """
     num_map = {}
     
     for i, num in enumerate(nums):
@@ -40,21 +25,12 @@ export const hashMapPython = `def twoSum(nums, target):
         
         num_map[num] = i
     
-    return []
+    return []`;
 
-# nums = [2, 7, 11, 15]
-# target = 9
-# print(twoSum(nums, target))  # [0, 1]`;
-
-// Two Pointers implementations
-export const twoPointersJavaScript = `/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
+export const twoPointersJavaScript = `var twoSum = function(nums, target) {
+    const indexedNums = nums.map((num, index) => ({ num, originalIndex: index }));
     
-    nums.sort((a, b) => a.num - b.num);
+    indexedNums.sort((a, b) => a.num - b.num);
     
     let left = 0;
     let right = indexedNums.length - 1;
@@ -74,21 +50,11 @@ var twoSum = function(nums, target) {
     }
     
     return [];
-};
-
-// const nums = [2, 7, 11, 15];
-// const target = 9;
-// console.log(twoSum(nums, target)); // [0, 1]`;
+};`;
 
 export const twoPointersPython = `def twoSum(nums, target):
-    """
-    :type nums: List[int]
-    :type target: int
-    :rtype: List[int]
-    """
     indexed_nums = [(num, i) for i, num in enumerate(nums)]
     
-    # Ordenar por valor
     indexed_nums.sort()
     
     left = 0
@@ -106,13 +72,8 @@ export const twoPointersPython = `def twoSum(nums, target):
         else:
             right -= 1
     
-    return []
+    return []`;
 
-# nums = [2, 7, 11, 15]
-# target = 9
-# print(twoSum(nums, target))  # [0, 1]`;
-
-// Function to get algorithm explanations with translations
 export const getAlgorithmExplanations = (t) => {
   return {
     hashmap: {

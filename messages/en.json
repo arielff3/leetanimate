@@ -9,6 +9,13 @@
     "portuguese": "Portuguese",
     "english": "English"
   },
+  "validation": {
+    "arrayRequired": "Array cannot be empty",
+    "arrayInvalidNumbers": "Array must contain only numbers separated by commas",
+    "arrayMinElements": "Array must have at least 2 elements",
+    "targetRequired": "Target cannot be empty",
+    "targetInvalid": "Target must be a valid number"
+  },
   "home": {
     "title": "Animated LeetCode Algorithms",
     "subtitle": "Visualize and learn LeetCode algorithms through interactive educational animations.",

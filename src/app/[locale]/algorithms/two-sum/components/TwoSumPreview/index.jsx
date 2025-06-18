@@ -8,14 +8,12 @@ import { Play, Pause } from "lucide-react";
 import { useTwoSum } from "../../contexts/TwoSumContext";
 import { useTranslations } from "next-intl";
 
-export default function TwoSumPreview() {
+const TwoSumPreview = () => {
   const { method } = useTwoSum();
   const t = useTranslations('twoSum');
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [foundSolution, setFoundSolution] = useState(null);
-  
-  // Estados específicos para Two Pointers
   const [leftPointer, setLeftPointer] = useState(-1);
   const [rightPointer, setRightPointer] = useState(-1);
   const [sortedNums, setSortedNums] = useState([]);
@@ -23,7 +21,6 @@ export default function TwoSumPreview() {
   const nums = [2, 7, 11, 15];
   const target = 9;
 
-  // Reset preview quando método mudar
   useEffect(() => {
     resetPreview();
   }, [method]);
@@ -55,18 +52,14 @@ export default function TwoSumPreview() {
 
   const executeTwoPointersStep = () => {
     if (leftPointer === -1) {
-      // Inicializar - simular array ordenado [2,7,11,15] já está ordenado
       setSortedNums([2, 7, 11, 15]);
       setLeftPointer(0);
       setRightPointer(3);
     } else if (leftPointer === 0 && rightPointer === 3) {
-      // Primeira iteração: 2 + 15 = 17 > 9, mover right
       setRightPointer(2);
     } else if (leftPointer === 0 && rightPointer === 2) {
-      // Segunda iteração: 2 + 11 = 13 > 9, mover right
       setRightPointer(1);
     } else if (leftPointer === 0 && rightPointer === 1) {
-      // Terceira iteração: 2 + 7 = 9 = target, encontrou!
       setFoundSolution([0, 1]);
       setIsPlaying(false);
     }
@@ -119,7 +112,6 @@ export default function TwoSumPreview() {
             </p>
           </div>
           
-          {/* Array Preview */}
           <div className="flex gap-2 justify-center pt-2">
             {displayNums.map((num, index) => {
               const isCurrentHashMap = method === "hashmap" && currentIndex === index;
@@ -143,7 +135,6 @@ export default function TwoSumPreview() {
                   transition={{ duration: 0.3 }}
                 >
                   {num}
-                  {/* Pointer Labels */}
                   {isLeftPointer && (
                     <div className="absolute -top-6 text-xs font-bold text-purple-600">L</div>
                   )}
@@ -155,7 +146,6 @@ export default function TwoSumPreview() {
             })}
           </div>
 
-          {/* Status */}
           <div className="text-sm min-h-[20px]">
             {getStatusMessage() && (
               <span className={foundSolution ? "text-green-600 font-medium" : ""}>
@@ -164,7 +154,6 @@ export default function TwoSumPreview() {
             )}
           </div>
 
-          {/* Control */}
           <Button onClick={togglePlay} variant="outline" size="sm" className="gap-2">
             {isPlaying ? <Pause className="h-3 w-3" /> : <Play className="h-3 w-3" />}
             {isPlaying ? t('preview.pause') : foundSolution ? t('preview.restart') : t('preview.play')}
@@ -173,4 +162,6 @@ export default function TwoSumPreview() {
       </CardContent>
     </Card>
   );
-} 
+};
+
+export default TwoSumPreview; 

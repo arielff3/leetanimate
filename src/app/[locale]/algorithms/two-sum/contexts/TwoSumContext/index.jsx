@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 
 const TwoSumContext = createContext();
 
-export function TwoSumProvider({ children }) {
+export const TwoSumProvider = ({ children }) => {
   const [method, setMethod] = useState("hashmap");
 
   return (
@@ -12,12 +12,12 @@ export function TwoSumProvider({ children }) {
       {children}
     </TwoSumContext.Provider>
   );
-}
+};
 
-export function useTwoSum() {
+export const useTwoSum = () => {
   const context = useContext(TwoSumContext);
   if (!context) {
     throw new Error("useTwoSum must be used within a TwoSumProvider");
   }
   return context;
-} 
+}; 

@@ -11,7 +11,7 @@ import {
 import { useSettings } from "@/contexts/SettingsContext";
 import { useTranslations } from "next-intl";
 
-export function ThemeToggle() {
+export const ThemeToggle = () => {
   const { theme, changeTheme } = useSettings();
   const t = useTranslations('common');
 
@@ -39,7 +39,7 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => changeTheme("light")}
           className="flex items-center gap-2"
         >
@@ -47,7 +47,7 @@ export function ThemeToggle() {
           {t('light')}
           {theme === "light" && <span className="ml-auto">✓</span>}
         </DropdownMenuItem>
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => changeTheme("dark")}
           className="flex items-center gap-2"
         >
@@ -55,7 +55,7 @@ export function ThemeToggle() {
           {t('dark')}
           {theme === "dark" && <span className="ml-auto">✓</span>}
         </DropdownMenuItem>
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => changeTheme("system")}
           className="flex items-center gap-2"
         >
@@ -66,4 +66,4 @@ export function ThemeToggle() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-} 
+}; 

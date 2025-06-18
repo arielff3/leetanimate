@@ -9,6 +9,13 @@
     "portuguese": "Português",
     "english": "Inglês"
   },
+  "validation": {
+    "arrayRequired": "Array não pode estar vazio",
+    "arrayInvalidNumbers": "Array deve conter apenas números separados por vírgula",
+    "arrayMinElements": "Array deve ter pelo menos 2 elementos",
+    "targetRequired": "Target não pode estar vazio",
+    "targetInvalid": "Target deve ser um número válido"
+  },
   "home": {
     "title": "Algoritmos LeetCode Animados",
     "subtitle": "Visualize e aprenda algoritmos do LeetCode através de animações interativas educativas.",

@@ -20,7 +20,7 @@ import TwoSumSolution from "./components/TwoSumSolution";
 import TwoSumPreview from "./components/TwoSumPreview";
 import { TwoSumProvider, useTwoSum } from "./contexts/TwoSumContext";
 
-function TwoSumContent() {
+const TwoSumContent = () => {
   const [activeTab, setActiveTab] = useState("description");
   const { method, setMethod } = useTwoSum();
   const locale = useLocale();
@@ -126,12 +126,14 @@ function TwoSumContent() {
       </div>
     </div>
   );
-}
+};
 
-export default function TwoSumPage() {
+const TwoSumPage = () => {
   return (
     <TwoSumProvider>
       <TwoSumContent />
-          </TwoSumProvider>
+    </TwoSumProvider>
   );
-}
+};
+
+export default TwoSumPage;
