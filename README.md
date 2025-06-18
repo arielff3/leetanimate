@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
-![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-pink?style=for-the-badge&logo=framer)
@@ -97,8 +97,8 @@ leetanimate/
 
 ## 🎨 Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
-- **Frontend**: React 18, TypeScript
+- **Framework**: Next.js 15 (App Router)
+- **Frontend**: React 19, TypeScript
 - **Styling**: Tailwind CSS, shadcn/ui
 - **Animations**: Framer Motion
 - **Internationalization**: next-intl
