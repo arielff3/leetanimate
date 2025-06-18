@@ -10,7 +10,7 @@
 
 **Visualize and learn LeetCode algorithms through interactive educational animations**
 
-[🌐 Live Demo](https://algorithms-animations.vercel.app) • [📖 Documentation](./docs) • [🐛 Report Bug](https://github.com/your-username/algorithms-animations/issues) • [💡 Request Feature](https://github.com/your-username/algorithms-animations/issues)
+[🌐 Live](https://leetanimate.com) • [📖 Documentation](./docs) • [🐛 Report Bug](https://github.com/arielff3/leetanimate/issues) • [💡 Request Feature](https://github.com/arielff3/leetanimate/issues)
 
 </div>
 
@@ -22,7 +22,7 @@
 - 📱 **Mobile-First**: Optimized for all devices
 - ⚡ **Performance**: Built with Next.js 15 and React 19
 - 🎯 **Educational**: Detailed explanations of complexity and implementation
-- 🔧 **Customizable**: Test your own input cases
+- 🔧 **Customizable**: Personalize your learning experience with custom inputs
 
 ## 🚀 Available Algorithms
 
@@ -78,7 +78,7 @@ http://localhost:3000
 ## 🏗️ Project Structure
 
 ```
-algorithms-animations/
+leetanimate/
 ├── src/
 │   ├── app/                    # App Router (Next.js 14)
 │   │   ├── [locale]/          # Internationalized routes
@@ -160,10 +160,10 @@ See also the list of [contributors](https://github.com/arielff3/leetanimate/cont
 
 ## 📊 Project Status
 
-![GitHub issues](https://img.shields.io/github/issues/your-username/algorithms-animations)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/your-username/algorithms-animations)
-![GitHub stars](https://img.shields.io/github/stars/your-username/algorithms-animations)
-![GitHub forks](https://img.shields.io/github/forks/your-username/algorithms-animations)
+![GitHub issues](https://img.shields.io/github/issues/arielff3/leetanimate)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/arielff3/leetanimate)
+![GitHub stars](https://img.shields.io/github/stars/arielff3/leetanimate)
+![GitHub forks](https://img.shields.io/github/forks/arielff3/leetanimate)
 
 ## 🔗 Useful Links
 

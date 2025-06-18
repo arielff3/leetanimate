@@ -183,7 +183,8 @@
       "movingRightLargeSum": "Moving right pointer (sum too large)",
       "nextComparison": "Next comparison: nums[{left}] + nums[{right}]",
       "solutionDetailed": "Solution: nums[{index1}] + nums[{index2}] = {val1} + {val2} = {target}",
-      "indexArrow": "→ index {index}"
+      "indexArrow": "→ index {index}",
+      "nextComparisonDetailed": "Next comparison: nums[{left}] + nums[{right}]"
     },
     "algorithmExplanations": {
       "hashmap": {

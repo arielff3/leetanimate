@@ -15,20 +15,17 @@ Please delete options that are not relevant.
 - [ ] 🎨 Style/UI improvement
 - [ ] ⚡ Performance improvement
 - [ ] ♻️ Code refactoring
-- [ ] 🧪 Test addition or improvement
 - [ ] 🔧 Build/CI configuration change
 
-## 🧪 How Has This Been Tested?
+## 🧪 How Has This Been Verified?
 
-Please describe the tests that you ran to verify your changes.
+Please describe how you verified your changes work correctly.
 
-- [ ] Unit tests
-- [ ] Integration tests
-- [ ] Manual testing
-- [ ] Cross-browser testing
-- [ ] Mobile device testing
+- [ ] Manual verification
+- [ ] Cross-browser verification
+- [ ] Mobile device verification
 
-**Test Configuration**:
+**Verification Configuration**:
 - Browser: [e.g. Chrome 91, Firefox 89]
 - OS: [e.g. Windows 10, macOS Big Sur]
 - Device: [e.g. Desktop, iPhone 12, Samsung Galaxy S21]
@@ -64,8 +61,7 @@ Please add screenshots to help explain your changes.
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
+- [ ] I have verified that my changes work as expected
 - [ ] Any dependent changes have been merged and published in downstream modules
 
 ## 🌐 Internationalization
@@ -73,7 +69,7 @@ Please add screenshots to help explain your changes.
 - [ ] No text changes (skip this section)
 - [ ] I have added translations for new text in both `messages/pt.json` and `messages/en.json`
 - [ ] I have used the translation system (`useTranslations`) for all user-facing text
-- [ ] I have tested the changes in both Portuguese and English
+- [ ] I have verified the changes in both Portuguese and English
 
 ## ⚡ Performance Impact
 
@@ -94,16 +90,16 @@ Please add screenshots to help explain your changes.
 ## 📱 Mobile Responsiveness
 
 - [ ] Not applicable
-- [ ] I have tested on mobile devices
+- [ ] I have verified on mobile devices
 - [ ] Changes are mobile-responsive
-- [ ] I have tested on different screen sizes
+- [ ] I have verified on different screen sizes
 
 ## ♿ Accessibility
 
 - [ ] Not applicable
 - [ ] I have considered accessibility implications
 - [ ] Changes maintain or improve accessibility
-- [ ] I have tested with screen readers (if applicable)
+- [ ] I have verified with screen readers (if applicable)
 
 ## 🔗 Related Issues
 

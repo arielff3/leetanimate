@@ -183,7 +183,8 @@
       "movingRightLargeSum": "Movendo ponteiro direito (soma muito grande)",
       "nextComparison": "Próxima comparação: nums[{left}] + nums[{right}]",
       "solutionDetailed": "Solução: nums[{index1}] + nums[{index2}] = {val1} + {val2} = {target}",
-      "indexArrow": "→ índice {index}"
+      "indexArrow": "→ índice {index}",
+      "nextComparisonDetailed": "Próxima comparação: nums[{left}] + nums[{right}]"
     },
     "algorithmExplanations": {
       "hashmap": {

@@ -249,8 +249,8 @@ const TwoSumSolution = () => {
           stepHistory: newHistory,
           operationCount: 1,
           memoryUsage: sorted.length,
-          currentOperation: "Array ordenado e ponteiros inicializados",
-          detailedStatus: `Complexidade da ordenação: O(n log n) = O(${prev.nums.length} log ${prev.nums.length})`,
+          currentOperation: t("arrayOrderedPointers"),
+          detailedStatus: t("sortingComplexity", { n: prev.nums.length }),
           pointerMovements: [
             {
               step: 1,
@@ -268,7 +268,7 @@ const TwoSumSolution = () => {
       const newComparisons = prev.comparisons + 1;
       const newOperationCount = prev.operationCount + 1;
 
-      const stepAction = `Comparando L=${prev.leftPointer}, R=${prev.rightPointer}`;
+      const stepAction = t("comparing", { left: prev.leftPointer, right: prev.rightPointer });
       const stepDetails = `${leftVal} + ${rightVal} = ${sum}, target = ${prev.target}`;
 
       if (sum === prev.target) {
@@ -284,7 +284,7 @@ const TwoSumSolution = () => {
           {
             step: prev.stepHistory.length + 1,
             action: stepAction,
-            details: `${stepDetails}. ✅ Soma igual ao target! Índices originais: [${solutionIndices[0]}, ${solutionIndices[1]}]`,
+            details: `${stepDetails}. ✅ ${t("sumEqualsTarget", { indices: `${solutionIndices[0]}, ${solutionIndices[1]}` })}`,
             type: "success",
           },
         ];
@@ -297,12 +297,14 @@ const TwoSumSolution = () => {
           stepHistory: newHistory,
           operationCount: newOperationCount,
           comparisons: newComparisons,
-          currentOperation: "Solução encontrada!",
-          detailedStatus: `Solução: nums[${solutionIndices[0]}] + nums[${
-            solutionIndices[1]
-          }] = ${prev.nums[solutionIndices[0]]} + ${
-            prev.nums[solutionIndices[1]]
-          } = ${prev.target}`,
+          currentOperation: t("solutionFoundDetailed"),
+          detailedStatus: t("solutionDetailed", {
+            index1: solutionIndices[0],
+            index2: solutionIndices[1],
+            val1: prev.nums[solutionIndices[0]],
+            val2: prev.nums[solutionIndices[1]],
+            target: prev.target,
+          }),
           pointerMovements: [
             ...prev.pointerMovements,
             {
@@ -321,7 +323,7 @@ const TwoSumSolution = () => {
             {
               step: prev.stepHistory.length + 1,
               action: stepAction,
-              details: `${stepDetails}. Soma < target, mas ponteiros se encontraram. Nenhuma solução encontrada.`,
+              details: `${stepDetails}. ${t("sumLessThanTarget")}`,
               type: "error",
             },
           ];
@@ -333,8 +335,8 @@ const TwoSumSolution = () => {
             stepHistory: newHistory,
             operationCount: newOperationCount,
             comparisons: newComparisons,
-            currentOperation: "Finalizado",
-            detailedStatus: "Algoritmo concluído sem encontrar solução",
+            currentOperation: t("finished"),
+            detailedStatus: t("algorithmCompleted"),
           };
         }
 
@@ -343,9 +345,10 @@ const TwoSumSolution = () => {
           {
             step: prev.stepHistory.length + 1,
             action: stepAction,
-            details: `${stepDetails}. Soma < target, movendo ponteiro esquerdo: L=${
-              prev.leftPointer
-            } → L=${prev.leftPointer + 1}`,
+            details: `${stepDetails}. ${t("movingLeftPointer", {
+              oldLeft: prev.leftPointer,
+              newLeft: prev.leftPointer + 1,
+            })}`,
             type: "info",
           },
         ];
@@ -356,10 +359,11 @@ const TwoSumSolution = () => {
           stepHistory: newHistory,
           operationCount: newOperationCount,
           comparisons: newComparisons,
-          currentOperation: `Movendo ponteiro esquerdo (soma muito pequena)`,
-          detailedStatus: `Próxima comparação: nums[${
-            prev.leftPointer + 1
-          }] + nums[${prev.rightPointer}]`,
+          currentOperation: t("movingLeftSmallSum"),
+          detailedStatus: t("nextComparisonDetailed", {
+            left: prev.leftPointer + 1,
+            right: prev.rightPointer,
+          }),
           pointerMovements: [
             ...prev.pointerMovements,
             {
@@ -378,7 +382,7 @@ const TwoSumSolution = () => {
             {
               step: prev.stepHistory.length + 1,
               action: stepAction,
-              details: `${stepDetails}. Soma > target, mas ponteiros se encontraram. Nenhuma solução encontrada.`,
+              details: `${stepDetails}. ${t("sumGreaterThanTarget")}`,
               type: "error",
             },
           ];
@@ -390,8 +394,8 @@ const TwoSumSolution = () => {
             stepHistory: newHistory,
             operationCount: newOperationCount,
             comparisons: newComparisons,
-            currentOperation: "Finalizado",
-            detailedStatus: "Algoritmo concluído sem encontrar solução",
+            currentOperation: t("finished"),
+            detailedStatus: t("algorithmCompleted"),
           };
         }
 
@@ -400,9 +404,10 @@ const TwoSumSolution = () => {
           {
             step: prev.stepHistory.length + 1,
             action: stepAction,
-            details: `${stepDetails}. Soma > target, movendo ponteiro direito: R=${
-              prev.rightPointer
-            } → R=${prev.rightPointer - 1}`,
+            details: `${stepDetails}. ${t("movingRightPointer", {
+              oldRight: prev.rightPointer,
+              newRight: prev.rightPointer - 1,
+            })}`,
             type: "info",
           },
         ];
@@ -413,10 +418,11 @@ const TwoSumSolution = () => {
           stepHistory: newHistory,
           operationCount: newOperationCount,
           comparisons: newComparisons,
-          currentOperation: `Movendo ponteiro direito (soma muito grande)`,
-          detailedStatus: `Próxima comparação: nums[${
-            prev.leftPointer
-          }] + nums[${prev.rightPointer - 1}]`,
+          currentOperation: t("movingRightLargeSum"),
+          detailedStatus: t("nextComparisonDetailed", {
+            left: prev.leftPointer,
+            right: prev.rightPointer - 1,
+          }),
           pointerMovements: [
             ...prev.pointerMovements,
             {

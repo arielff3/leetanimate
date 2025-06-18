@@ -42,7 +42,7 @@ If applicable, add screenshots to help explain your problem.
 
 ## 🎯 Algorithm Context
 
-**Which algorithm were you viewing/testing?**
+**Which algorithm were you using?**
 - [ ] Two Sum
 - [ ] Other: ___________
 

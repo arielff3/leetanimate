@@ -27,7 +27,6 @@ This document provides guidelines and information on how to contribute effective
 4. **🎯 Implement Algorithms** - Add new LeetCode algorithms
 5. **🌐 Translate Content** - Help make the project globally accessible
 6. **🎨 Improve UI/UX** - Contribute with visual improvements
-7. **🧪 Write Tests** - Help maintain code quality
 
 ## 🛠️ Environment Setup
 
@@ -93,7 +92,6 @@ git checkout -b docs/documentation-name
 ### 3. Make your changes
 
 - Follow code standards
-- Test your changes
 - Update documentation if necessary
 
 ### 4. Commit your changes
@@ -200,7 +198,6 @@ Use the [Conventional Commits](https://www.conventionalcommits.org/) standard:
 - `docs`: Documentation
 - `style`: Formatting (doesn't affect code)
 - `refactor`: Refactoring
-- `test`: Tests
 - `chore`: Build/CI tasks
 
 ### Examples
@@ -211,7 +208,6 @@ fix: fix two pointers animation
 docs: update README with new algorithms
 style: format code with prettier
 refactor: move validations to utils
-test: add tests for binary search
 chore: update dependencies
 ```
 
@@ -220,7 +216,7 @@ chore: update dependencies
 ```bash
 feat(algorithms): add quick sort
 fix(ui): fix dark mode theme
-docs(contributing): add testing section
+docs(contributing): add new section
 ```
 
 ## 🔍 Pull Requests
@@ -241,9 +237,8 @@ Brief description of the changes.
 - [ ] 📝 Documentation
 - [ ] 🎨 UI/UX improvement
 - [ ] ♻️ Refactoring
-- [ ] 🧪 Tests
 
-## 🧪 How to Test
+## 🧪 How to Verify Changes
 
 1. Go to...
 2. Click on...
@@ -252,7 +247,7 @@ Brief description of the changes.
 ## 📋 Checklist
 
 - [ ] Code follows project standards
-- [ ] I tested the changes locally
+- [ ] I verified the changes locally
 - [ ] I updated documentation (if necessary)
 - [ ] I added translations (if necessary)
 - [ ] PR has descriptive title
@@ -270,7 +265,7 @@ Brief description of the changes.
 ### Before Reporting
 
 1. Check if an [issue](https://github.com/arielff3/leetanimate/issues) already exists
-2. Test on the latest version
+2. Verify on the latest version
 3. Reproduce the bug consistently
 
 ### Bug Report Template
