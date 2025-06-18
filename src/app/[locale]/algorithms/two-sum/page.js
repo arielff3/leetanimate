@@ -43,7 +43,6 @@ const TwoSumContent = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
             <div>
@@ -70,7 +69,6 @@ const TwoSumContent = () => {
             </div>
           </div>
 
-          {/* Method Selector */}
           <div className="flex flex-col items-end gap-2">
             <label className="text-sm font-medium text-muted-foreground">
               {t('methodSelector')}
@@ -87,12 +85,10 @@ const TwoSumContent = () => {
           </div>
         </div>
 
-        {/* Preview Animation */}
         <div className="mb-8">
           <TwoSumPreview />
         </div>
 
-        {/* Main Content */}
         <Card className="w-full">
           <CardHeader>
             <CardTitle>{t('titleWithMethod', { method: methodInfo.name })}</CardTitle>

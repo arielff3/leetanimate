@@ -127,7 +127,6 @@ const TwoSumCode = () => {
         </CardContent>
       </Card>
 
-      {/* Algorithm Explanation */}
       <Card>
         <CardHeader>
           <CardTitle className="text-lg">{t('algorithmExplanation', { method: getMethodTitle() })}</CardTitle>

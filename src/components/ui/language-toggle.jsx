@@ -11,7 +11,7 @@ import {
 import { useSettings } from "@/contexts/SettingsContext";
 import { useTranslations } from "next-intl";
 
-export function LanguageToggle() {
+export const LanguageToggle = () => {
   const { locale, changeLocale } = useSettings();
   const t = useTranslations('common');
 
@@ -32,7 +32,7 @@ export function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => changeLocale("pt")}
           className="flex items-center gap-2"
         >
@@ -40,7 +40,7 @@ export function LanguageToggle() {
           {t('portuguese')}
           {locale === "pt" && <span className="ml-auto">✓</span>}
         </DropdownMenuItem>
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => changeLocale("en")}
           className="flex items-center gap-2"
         >
@@ -51,4 +51,4 @@ export function LanguageToggle() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-} 
+}; 

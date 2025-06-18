@@ -1,179 +1,184 @@
-# 🎯 Algoritmos LeetCode Animados
+# 🎯 Animated LeetCode Algorithms
 
-Uma aplicação web interativa e educativa para visualizar algoritmos do LeetCode através de animações dinâmicas. Perfeita para estudantes e desenvolvedores que querem entender algoritmos de forma visual e intuitiva.
+<div align="center">
 
-## ✨ Funcionalidades
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-pink?style=for-the-badge&logo=framer)
 
-### 🎨 Interface Moderna
-- **Dark/Light Mode**: Botão flutuante para alternar entre temas
-- **Design Responsivo**: Interface adaptável para diferentes dispositivos
-- **Animações Suaves**: Transições fluidas com Framer Motion
-- **Syntax Highlighting**: Código destacado com Prism.js
+**Visualize and learn LeetCode algorithms through interactive educational animations**
 
-### 🧮 Algoritmo Two Sum
-- **Dois Métodos de Solução**:
-  - **Hash Map**: O(n) tempo, O(n) espaço
-  - **Two Pointers**: O(n log n) tempo, O(1) espaço
-- **Visualização Interativa**: Animações passo a passo
-- **Controles Completos**: Play/Pause, Step-by-step, Reset
-- **Velocidade Configurável**: Lenta, Normal, Rápida
-- **Exemplos Personalizáveis**: Entrada customizada e exemplos pré-definidos
+[🌐 Live Demo](https://algorithms-animations.vercel.app) • [📖 Documentation](./docs) • [🐛 Report Bug](https://github.com/your-username/algorithms-animations/issues) • [💡 Request Feature](https://github.com/your-username/algorithms-animations/issues)
 
-### 📚 Conteúdo Educativo
-- **Descrição Detalhada**: Enunciado completo com exemplos
-- **Código Fonte**: Implementações em JavaScript e Python
-- **Explicações Técnicas**: Análise de complexidade e passos do algoritmo
-- **Comparação de Métodos**: Trade-offs entre diferentes abordagens
+</div>
 
-## 🚀 Tecnologias
+## ✨ Features
 
-- **[Next.js 15](https://nextjs.org/)** - Framework React com App Router
-- **[Tailwind CSS](https://tailwindcss.com/)** - Styling utilitário
-- **[shadcn/ui](https://ui.shadcn.com/)** - Componentes UI modernos
-- **[Framer Motion](https://www.framer.com/motion/)** - Animações fluidas
-- **[React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)** - Destacar código
-- **[Lucide React](https://lucide.dev/)** - Ícones elegantes
+- 🎬 **Interactive Animations**: Visualize algorithms step by step with smooth animations
+- 🌐 **Multilingual**: Complete support for Portuguese and English
+- 🎨 **Modern Interface**: Responsive design with light/dark theme
+- 📱 **Mobile-First**: Optimized for all devices
+- ⚡ **Performance**: Built with Next.js 15 and React 19
+- 🎯 **Educational**: Detailed explanations of complexity and implementation
+- 🔧 **Customizable**: Test your own input cases
 
-## 📦 Instalação
+## 🚀 Available Algorithms
 
-1. **Clone o repositório**:
+### Arrays
+- ✅ **Two Sum** - Hash Map and Two Pointers
+- 🔄 **Three Sum** _(in development)_
+- 🔄 **Container With Most Water** _(planned)_
+
+### Trees
+- 🔄 **Binary Tree Traversal** _(planned)_
+- 🔄 **Maximum Depth** _(planned)_
+
+### Graphs
+- 🔄 **DFS/BFS** _(planned)_
+- 🔄 **Shortest Path** _(planned)_
+
+## 📋 Prerequisites
+
+- Node.js 18+ 
+- npm or yarn or pnpm
+
+## 🛠️ Installation
+
+1. **Clone the repository**
 ```bash
-git clone https://github.com/seu-usuario/algorithms-animations.git
-cd algorithms-animations
+git clone https://github.com/arielff3/leetanimate.git
+cd leetanimate
 ```
 
-2. **Instale as dependências**:
+2. **Install dependencies**
 ```bash
 npm install
+# or
+yarn install
+# or
+pnpm install
 ```
 
-3. **Execute o servidor de desenvolvimento**:
+3. **Run the project**
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-4. **Abra no navegador**:
+4. **Open in browser**
 ```
 http://localhost:3000
 ```
 
-## 🎯 Como Usar
-
-### 1. Navegação
-- Acesse a página inicial para ver a lista de algoritmos disponíveis
-- Clique em "Two Sum" para explorar o algoritmo
-
-### 2. Seleção de Método
-- Use o seletor no canto superior direito para escolher entre:
-  - **Hash Map**: Solução mais eficiente em tempo
-  - **Two Pointers**: Solução mais eficiente em espaço
-
-### 3. Abas de Conteúdo
-- **Description**: Enunciado do problema com exemplos
-- **Code**: Implementações com syntax highlighting
-- **Solution**: Visualização animada interativa
-
-### 4. Controles de Animação
-- **▶️ Executar**: Inicia a animação automática
-- **⏸️ Pausar**: Pausa a animação atual
-- **⏭️ Próximo Passo**: Avança um passo manualmente
-- **🔄 Resetar**: Reinicia a animação
-- **⚙️ Velocidade**: Configura velocidade da animação
-- **✏️ Personalizar**: Define exemplos customizados
-
-### 5. Dark Mode
-- Clique no botão flutuante no canto inferior direito para alternar o tema
-
-## 🏗️ Estrutura do Projeto
+## 🏗️ Project Structure
 
 ```
-src/
-├── app/
-│   ├── algorithms/
-│   │   └── two-sum/
-│   │       └── page.js          # Página do algoritmo Two Sum
-│   ├── globals.css              # Estilos globais
-│   ├── layout.js               # Layout principal
-│   └── page.js                 # Página inicial
-├── components/
-│   ├── algorithms/
-│   │   └── two-sum/
-│   │       ├── TwoSumCode.jsx       # Componente de código
-│   │       ├── TwoSumDescription.jsx # Descrição do problema
-│   │       ├── TwoSumPreview.jsx    # Prévia da animação
-│   │       └── TwoSumSolution.jsx   # Visualização completa
-│   └── ui/                     # Componentes shadcn/ui
-├── contexts/
-│   └── AlgorithmContext.jsx    # Contexto para método selecionado
-└── lib/
-    └── utils.js               # Utilitários
+algorithms-animations/
+├── src/
+│   ├── app/                    # App Router (Next.js 14)
+│   │   ├── [locale]/          # Internationalized routes
+│   │   └── globals.css        # Global styles
+│   ├── components/            # Reusable components
+│   │   └── ui/               # Base components (shadcn/ui)
+│   ├── contexts/             # Context providers
+│   ├── lib/                  # Utilities and validations
+│   └── i18n/                 # Internationalization config
+├── messages/                 # Translation files
+│   ├── en.json              # English
+│   └── pt.json              # Portuguese
+├── public/                  # Static assets
+└── docs/                    # Documentation
 ```
 
-## 🎨 Personalização
+## 🎨 Tech Stack
 
-### Adicionando Novos Algoritmos
+- **Framework**: Next.js 14 (App Router)
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui
+- **Animations**: Framer Motion
+- **Internationalization**: next-intl
+- **Validation**: Zod
+- **Syntax Highlighting**: Prism.js
+- **Icons**: Lucide React
 
-1. **Crie a estrutura de diretórios**:
-```bash
-mkdir -p src/app/algorithms/nome-algoritmo
-mkdir -p src/components/algorithms/nome-algoritmo
-```
+## 🌐 Internationalization
 
-2. **Implemente os componentes**:
-- `page.js` - Página principal do algoritmo
-- `Description.jsx` - Descrição do problema
-- `Code.jsx` - Implementações de código
-- `Solution.jsx` - Visualização animada
+The project supports multiple languages through `next-intl`:
 
-3. **Atualize a página inicial** para incluir o novo algoritmo
+- 🇧🇷 Portuguese (default)
+- 🇺🇸 English
 
-### Modificando Temas
+### Adding a new language
 
-Edite as variáveis CSS em `src/app/globals.css`:
-- `:root` - Tema claro
-- `.dark` - Tema escuro
+1. Create a translation file in `messages/[locale].json`
+2. Add the locale in `src/i18n/request.js`
+3. Update the middleware in `src/middleware.js`
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
-Contribuições são bem-vindas! Para contribuir:
+Contributions are very welcome! See our [Contributing Guide](CONTRIBUTING.md) to get started.
 
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. **Commit** suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. **Push** para a branch (`git push origin feature/nova-feature`)
-5. **Abra** um Pull Request
+### Ways to Contribute
 
-### Diretrizes de Contribuição
+- 🐛 Report bugs
+- 💡 Suggest new features
+- 📝 Improve documentation
+- 🎯 Implement new algorithms
+- 🌐 Add translations
+- 🎨 Improve UI/UX
 
-- Mantenha o código limpo e bem documentado
-- Siga os padrões de estilo existentes
-- Teste suas mudanças antes de submeter
-- Atualize a documentação quando necessário
+### Local Development
 
-## 📄 Licença
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## 📝 License
 
-## 🎯 Roadmap
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- [ ] **Algoritmo Three Sum**
-- [ ] **Algoritmo Binary Search**
-- [ ] **Algoritmo Merge Sort**
-- [ ] **Algoritmo Quick Sort**
-- [ ] **Estruturas de Dados**: Linked Lists, Trees, Graphs
-- [ ] **Testes Automatizados**
-- [ ] **Deploy Automático**
-- [ ] **Modo Offline**
+## 👥 Authors
 
-## 🙏 Agradecimentos
+- **Ariel Franco** - *Lead Developer* - [@arielff3](https://github.com/arielff3)
 
-- [LeetCode](https://leetcode.com/) - Pela inspiração dos problemas
-- [Vercel](https://vercel.com/) - Plataforma de deploy
-- [shadcn/ui](https://ui.shadcn.com/) - Componentes UI
-- Comunidade open source por todas as ferramentas incríveis
+See also the list of [contributors](https://github.com/arielff3/leetanimate/contributors) who participated in this project.
+
+## 🙏 Acknowledgments
+
+- [LeetCode](https://leetcode.com/) for the problem inspiration
+- [shadcn/ui](https://ui.shadcn.com/) for the base components
+- [Framer Motion](https://www.framer.com/motion/) for the animations
+- [Lucide](https://lucide.dev/) for the icons
+- Open source community for the support
+
+## 📊 Project Status
+
+![GitHub issues](https://img.shields.io/github/issues/your-username/algorithms-animations)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/your-username/algorithms-animations)
+![GitHub stars](https://img.shields.io/github/stars/your-username/algorithms-animations)
+![GitHub forks](https://img.shields.io/github/forks/your-username/algorithms-animations)
+
+## 🔗 Useful Links
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [shadcn/ui](https://ui.shadcn.com/)
 
 ---
 
-⭐ **Se este projeto te ajudou, considere dar uma estrela!**
+<div align="center">
 
-📧 **Dúvidas?** Abra uma [issue](https://github.com/seu-usuario/algorithms-animations/issues) ou entre em contato!
+**⭐ If this project helped you, consider giving it a star!**
+
+Made with ❤️ and ☕ by [Ariel Franco](https://github.com/arielff3)
+
+</div>

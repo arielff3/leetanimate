@@ -42,7 +42,7 @@ const themeScript = `
   })();
 `;
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
@@ -55,4 +55,6 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -840,7 +840,7 @@ const TwoSumSolution = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Badge variant="outline">
-                  {method === "hashmap" ? "Hash Map" : "Two Pointers"}
+                  {method === "hashmap" ? tMethods("hashmap") : tMethods("twopointers")}
                 </Badge>
                 <span className="text-sm">
                   {state.currentOperation || t("waitingToStart")}
