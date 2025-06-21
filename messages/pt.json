@@ -30,6 +30,10 @@
       "threeSum": {
         "title": "Three Sum", 
         "description": "Encontre todos os triplets únicos no array que somem zero."
+      },
+      "removeDuplicates": {
+        "title": "Remove Duplicates from Sorted Array",
+        "description": "Remova os elementos duplicados de um array ordenado in-place."
       }
     },
     "difficulty": {
@@ -218,6 +222,148 @@
           "• Se soma == target: retornar índices originais",
           "• Se soma < target: mover left para direita",
           "• Se soma > target: mover right para esquerda"
+        ]
+      }
+    }
+  },
+  "removeDuplicates": {
+    "title": "Remove Duplicates from Sorted Array",
+    "titleWithMethod": "Remove Duplicates from Sorted Array - {method}",
+    "backButton": "Voltar",
+    "category": "Arrays • Fácil",
+    "methodSelector": "Método de Solução",
+    "selectMethod": "Selecione o método",
+    "methods": {
+      "twopointers": "Two Pointers"
+    },
+    "tags": {
+      "twoPointers": "#two-pointers",
+      "onTime": "#O(n)-tempo",
+      "o1Space": "#O(1)-espaço",
+      "inPlace": "#in-place"
+    },
+    "tabs": {
+      "description": "Descrição",
+      "code": "Código",
+      "solution": "Solução"
+    },
+    "description": {
+      "title": "Enunciado do Problema",
+      "problem": "Dado um array de inteiros nums ordenado em ordem não-decrescente, remova os duplicados in-place de modo que cada elemento único apareça apenas uma vez. A ordem relativa dos elementos deve ser mantida.",
+      "return": "Retorne k após colocar os primeiros k elementos únicos nas primeiras k posições do array nums. Não importa o que você deixar além das primeiras k posições.",
+      "clarification": "Não aloque espaço extra para outro array. Você deve fazer isso modificando o array de entrada in-place com memória extra O(1).",
+      "examples": "Exemplos",
+      "example1": "Exemplo 1",
+      "example2": "Exemplo 2",
+      "input": "Entrada",
+      "output": "Saída",
+      "explanation": "Explicação",
+      "example1Explanation": "Sua função deve retornar k = 2, com os dois primeiros elementos de nums sendo 1 e 2. Não importa o que você deixar além do k retornado.",
+      "example2Explanation": "Sua função deve retornar k = 5, com os cinco primeiros elementos de nums sendo 0, 1, 2, 3 e 4. Não importa o que você deixar além do k retornado.",
+      "constraints": "Restrições",
+      "constraint1": "1 ≤ nums.length ≤ 3 * 10⁴",
+      "constraint2": "-100 ≤ nums[i] ≤ 100",
+      "constraint3": "nums está ordenado em ordem não-decrescente"
+    },
+    "code": {
+      "implementations": "Implementações - {method}",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copiar",
+      "solution": "Solução {method}",
+      "algorithmExplanation": "Explicação do Algoritmo - {method}",
+      "approach": "Abordagem",
+      "complexity": "Complexidade",
+      "time": "Tempo",
+      "space": "Espaço",
+      "steps": "Passos do Algoritmo"
+    },
+    "preview": {
+      "title": "Prévia da Animação - {method}",
+      "array": "nums = [{nums}]",
+      "play": "Executar Prévia",
+      "pause": "Pausar",
+      "restart": "Reiniciar",
+      "status": {
+        "clickToStart": "Clique para iniciar ({method})",
+        "twoPointersStep1": "unique=0, read=1: comparando nums[0]=1 com nums[1]=1",
+        "twoPointersStep2": "unique=0, read=2: comparando nums[0]=1 com nums[2]=2, escrevendo",
+        "twoPointersFinished": "✓ Array processado, comprimento único: {length}"
+      }
+    },
+    "solution": {
+      "title": "Visualização do Algoritmo",
+      "execute": "Executar",
+      "pause": "Pausar",
+      "restart": "Reiniciar",
+      "nextStep": "Próximo Passo",
+      "reset": "Resetar",
+      "speed": "Velocidade",
+      "customize": "Personalizar",
+      "speedOptions": {
+        "slow": "Lento",
+        "normal": "Normal",
+        "fast": "Rápido"
+      },
+      "customization": {
+        "title": "Personalizar Exemplo",
+        "arrayLabel": "Array (separado por vírgulas)",
+        "apply": "Aplicar"
+      },
+      "visualization": "Visualização",
+      "array": "Array",
+      "currentStatus": "Status Atual",
+      "algorithmSelected": "Algoritmo selecionado: {method}",
+      "predefinedExamples": "Exemplos Pré-definidos",
+      "example": "Exemplo",
+      "performanceMetrics": "Métricas de Performance",
+      "operations": "Operações",
+      "comparisons": "Comparações",
+      "writes": "Escritas",
+      "timeComplexity": "Complexidade Tempo",
+      "spaceComplexity": "Complexidade Espaço",
+      "uniquePointer": "unique",
+      "readPointer": "read",
+      "finished": "Finalizado",
+      "algorithmCompleted": "Algoritmo concluído",
+      "finalResult": "Resultado final: {length} elementos únicos",
+      "processingElement": "Processando elemento {current}/{total}",
+      "comparing": "Comparando",
+      "duplicate": "Duplicado encontrado",
+      "unique": "Elemento único encontrado",
+      "writing": "Escrevendo elemento único",
+      "skipping": "Pulando duplicado",
+      "initializingPointers": "Inicializando ponteiros",
+      "pointersReady": "Ponteiros unique=0, read=1 prontos",
+      "checkingElement": "Verificando nums[{read}] = {value}",
+      "duplicateFound": "nums[{unique}] = nums[{read}] = {value}, pulando",
+      "uniqueFound": "nums[{unique}] ≠ nums[{read}], movendo unique para {newUnique}",
+      "writingUnique": "Escrevendo nums[{read}] = {value} em nums[{unique}]",
+      "algorithmFinished": "Algoritmo finalizado",
+      "finalLength": "Comprimento final do array único: {length}",
+      "movingPointers": "Movendo ponteiros: unique={unique}, read={read}",
+            "currentComparison": "Comparação atual: nums[{unique}] vs nums[{read}]",
+      "exampleLabel": "Exemplo",
+      "pointers": "Ponteiros",
+      "waitingToStart": "Aguardando início",
+      "stepHistory": "Histórico de Passos"
+    },
+    "algorithmExplanations": {
+      "twopointers": {
+        "title": "Two Pointers (Otimizado)",
+        "description": "Esta solução utiliza dois ponteiros: 'unique' para a posição onde escrever o próximo elemento único, e 'read' para percorrer o array. Como o array está ordenado, elementos duplicados são consecutivos.",
+        "complexity": {
+          "time": "O(n) - onde n é o número de elementos no array",
+          "space": "O(1) - apenas espaço constante extra é usado"
+        },
+        "steps": [
+          "Inicializar ponteiro unique = 0 e read = 1",
+          "Enquanto read < array.length:",
+          "• Se nums[unique] != nums[read]:",
+          "  - Incrementar unique",
+          "  - Copiar nums[read] para nums[unique]",
+          "• Incrementar read",
+          "Retornar unique + 1 (quantidade de elementos únicos)"
         ]
       }
     }

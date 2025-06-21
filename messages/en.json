@@ -30,6 +30,10 @@
       "threeSum": {
         "title": "Three Sum",
         "description": "Find all unique triplets in the array that sum to zero."
+      },
+      "removeDuplicates": {
+        "title": "Remove Duplicates from Sorted Array",
+        "description": "Remove duplicate elements from a sorted array in-place."
       }
     },
     "difficulty": {
@@ -218,6 +222,148 @@
           "• If sum == target: return original indices",
           "• If sum < target: move left pointer right",
           "• If sum > target: move right pointer left"
+        ]
+      }
+    }
+  },
+  "removeDuplicates": {
+    "title": "Remove Duplicates from Sorted Array",
+    "titleWithMethod": "Remove Duplicates from Sorted Array - {method}",
+    "backButton": "Back",
+    "category": "Arrays • Easy",
+    "methodSelector": "Solution Method",
+    "selectMethod": "Select method",
+    "methods": {
+      "twopointers": "Two Pointers"
+    },
+    "tags": {
+      "twoPointers": "#two-pointers",
+      "onTime": "#O(n)-time",
+      "o1Space": "#O(1)-space",
+      "inPlace": "#in-place"
+    },
+    "tabs": {
+      "description": "Description",
+      "code": "Code",
+      "solution": "Solution"
+    },
+    "description": {
+      "title": "Problem Statement",
+      "problem": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.",
+      "return": "Return k after placing the final result in the first k slots of nums. Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.",
+      "clarification": "It does not matter what you leave beyond the first k elements.",
+      "examples": "Examples",
+      "example1": "Example 1",
+      "example2": "Example 2",
+      "input": "Input",
+      "output": "Output",
+      "explanation": "Explanation",
+      "example1Explanation": "Your function should return k = 2, with the first two elements of nums being 1 and 2. It does not matter what you leave beyond the returned k.",
+      "example2Explanation": "Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4. It does not matter what you leave beyond the returned k.",
+      "constraints": "Constraints",
+      "constraint1": "1 ≤ nums.length ≤ 3 * 10⁴",
+      "constraint2": "-100 ≤ nums[i] ≤ 100",
+      "constraint3": "nums is sorted in non-decreasing order"
+    },
+    "code": {
+      "implementations": "Implementations - {method}",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copy",
+      "solution": "{method} Solution",
+      "algorithmExplanation": "Algorithm Explanation - {method}",
+      "approach": "Approach",
+      "complexity": "Complexity",
+      "time": "Time",
+      "space": "Space",
+      "steps": "Algorithm Steps"
+    },
+    "preview": {
+      "title": "Animation Preview - {method}",
+      "array": "nums = [{nums}]",
+      "play": "Run Preview",
+      "pause": "Pause",
+      "restart": "Restart",
+      "status": {
+        "clickToStart": "Click to start ({method})",
+        "twoPointersStep1": "unique=0, read=1: comparing nums[0]=1 with nums[1]=1",
+        "twoPointersStep2": "unique=0, read=2: comparing nums[0]=1 with nums[2]=2, writing",
+        "twoPointersFinished": "✓ Array processed, unique length: {length}"
+      }
+    },
+    "solution": {
+      "title": "Algorithm Visualization",
+      "execute": "Execute",
+      "pause": "Pause",
+      "restart": "Restart",
+      "nextStep": "Next Step",
+      "reset": "Reset",
+      "speed": "Speed",
+      "customize": "Customize",
+      "speedOptions": {
+        "slow": "Slow",
+        "normal": "Normal",
+        "fast": "Fast"
+      },
+      "customization": {
+        "title": "Customize Example",
+        "arrayLabel": "Array (comma separated)",
+        "apply": "Apply"
+      },
+      "visualization": "Visualization",
+      "array": "Array",
+      "currentStatus": "Current Status",
+      "algorithmSelected": "Selected algorithm: {method}",
+      "predefinedExamples": "Predefined Examples",
+      "example": "Example",
+      "performanceMetrics": "Performance Metrics",
+      "operations": "Operations",
+      "comparisons": "Comparisons",
+      "writes": "Writes",
+      "timeComplexity": "Time Complexity",
+      "spaceComplexity": "Space Complexity",
+      "uniquePointer": "unique",
+      "readPointer": "read",
+      "finished": "Finished",
+      "algorithmCompleted": "Algorithm completed",
+      "finalResult": "Final result: {length} unique elements",
+      "processingElement": "Processing element {current}/{total}",
+      "comparing": "Comparing",
+      "duplicate": "Duplicate found",
+      "unique": "Unique element found",
+      "writing": "Writing unique element",
+      "skipping": "Skipping duplicate",
+      "initializingPointers": "Initializing pointers",
+      "pointersReady": "Pointers unique=0, read=1 ready",
+      "checkingElement": "Checking nums[{read}] = {value}",
+      "duplicateFound": "nums[{unique}] = nums[{read}] = {value}, skipping",
+      "uniqueFound": "nums[{unique}] ≠ nums[{read}], moving unique to {newUnique}",
+      "writingUnique": "Writing nums[{read}] = {value} to nums[{unique}]",
+      "algorithmFinished": "Algorithm finished",
+      "finalLength": "Final unique array length: {length}",
+      "movingPointers": "Moving pointers: unique={unique}, read={read}",
+            "currentComparison": "Current comparison: nums[{unique}] vs nums[{read}]",
+      "exampleLabel": "Example",
+      "pointers": "Pointers",
+      "waitingToStart": "Waiting to start",
+      "stepHistory": "Step History"
+    },
+    "algorithmExplanations": {
+      "twopointers": {
+        "title": "Two Pointers (Optimized)",
+        "description": "This solution uses two pointers: 'unique' for the position to write the next unique element, and 'read' to traverse the array. Since the array is sorted, duplicate elements are consecutive.",
+        "complexity": {
+          "time": "O(n) - where n is the number of elements in the array",
+          "space": "O(1) - only constant extra space is used"
+        },
+        "steps": [
+          "Initialize pointer unique = 0 and read = 1",
+          "While read < array.length:",
+          "• If nums[unique] != nums[read]:",
+          "  - Increment unique",
+          "  - Copy nums[read] to nums[unique]",
+          "• Increment read",
+          "Return unique + 1 (count of unique elements)"
         ]
       }
     }

@@ -508,7 +508,7 @@ const TwoSumSolution = () => {
       setSelectedExample(-1);
       setShowCustomization(false);
     } catch (error) {
-      console.error("Error applying customization:", error);
+
     }
   };
 

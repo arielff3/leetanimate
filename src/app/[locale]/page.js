@@ -15,6 +15,14 @@ const Home = () => {
       leetcodeNumber: 1
     },
     {
+      id: "remove-duplicates",
+      titleKey: "removeDuplicates.title",
+      category: "arrays",
+      difficulty: "easy",
+      descriptionKey: "removeDuplicates.description",
+      leetcodeNumber: 26
+    },
+    {
       id: "three-sum",
       titleKey: "threeSum.title",
       category: "arrays", 

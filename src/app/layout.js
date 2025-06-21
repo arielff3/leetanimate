@@ -12,13 +12,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Algoritmos LeetCode Animados",
-  description: "Visualize e aprenda algoritmos do LeetCode através de animações interativas educativas. Open source.",
-  keywords: "algoritmos, leetcode, animações, programação, estruturas de dados, visualização",
-  authors: [{ name: "Algoritmos Animados Team" }],
+  title: "LeetCode",
+  description: "Learn algorithms and data structures through interactive animations.",
+  keywords: "algorithms, leetcode, animations, programming, data structures, visualization",
+  authors: [{ name: "Ariel Franco" }],
   openGraph: {
-    title: "Algoritmos LeetCode Animados",
-    description: "Visualize e aprenda algoritmos do LeetCode através de animações interativas educativas",
+    title: "LeetCode",
+    description: "Learn algorithms and data structures through interactive animations.",
     type: "website",
   },
 };
