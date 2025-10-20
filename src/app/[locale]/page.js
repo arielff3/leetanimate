@@ -23,9 +23,33 @@ const Home = () => {
       leetcodeNumber: 26
     },
     {
+      id: "best-time-to-buy-and-sell-stock",
+      titleKey: "bestTimeToBuyAndSellStock.title",
+      category: "arrays",
+      difficulty: "easy",
+      descriptionKey: "bestTimeToBuyAndSellStock.description",
+      leetcodeNumber: 121
+    },
+    {
+      id: "reverse-string",
+      titleKey: "reverseString.title",
+      category: "strings",
+      difficulty: "easy",
+      descriptionKey: "reverseString.description",
+      leetcodeNumber: 344
+    },
+    {
+      id: "valid-palindrome",
+      titleKey: "validPalindrome.title",
+      category: "strings",
+      difficulty: "easy",
+      descriptionKey: "validPalindrome.description",
+      leetcodeNumber: 125
+    },
+    {
       id: "three-sum",
       titleKey: "threeSum.title",
-      category: "arrays", 
+      category: "arrays",
       difficulty: "medium",
       descriptionKey: "threeSum.description",
       leetcodeNumber: 15
@@ -57,10 +81,41 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-6">{t('categories.arrays')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {algorithms.map((algorithm) => (
+        <div className="space-y-12">
+          <div>
+            <h2 className="text-2xl font-semibold mb-6">{t('categories.arrays')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {algorithms.filter(algo => algo.category === 'arrays').map((algorithm) => (
+                <Link key={algorithm.id} href={`/algorithms/${algorithm.id}`}>
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-2">
+                        <CardTitle className="text-lg">
+                          #{algorithm.leetcodeNumber}. {t(`algorithms.${algorithm.titleKey}`)}
+                        </CardTitle>
+                        <span className={`text-sm font-medium ${getDifficultyColor(algorithm.difficulty)}`}>
+                          {t(`difficulty.${algorithm.difficulty}`)}
+                        </span>
+                      </div>
+                      <CardDescription className="text-sm text-muted-foreground">
+                        {t(`categories.${algorithm.category}`)}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        {t(`algorithms.${algorithm.descriptionKey}`)}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-6">{t('categories.strings')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {algorithms.filter(algo => algo.category === 'strings').map((algorithm) => (
               <Link key={algorithm.id} href={`/algorithms/${algorithm.id}`}>
                 <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
                   <CardHeader>
@@ -82,8 +137,9 @@ const Home = () => {
                     </p>
                   </CardContent>
                 </Card>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

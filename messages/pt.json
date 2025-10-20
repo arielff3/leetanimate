@@ -14,13 +14,23 @@
     "arrayInvalidNumbers": "Array deve conter apenas números separados por vírgula",
     "arrayMinElements": "Array deve ter pelo menos 2 elementos",
     "targetRequired": "Target não pode estar vazio",
-    "targetInvalid": "Target deve ser um número válido"
+    "targetInvalid": "Target deve ser um número válido",
+    "stringRequired": "String não pode estar vazia",
+    "stringInvalidChars": "String deve conter apenas letras separadas por vírgula",
+    "stringLength": "String deve ter entre 1 e 1000 caracteres",
+    "palindromeRequired": "String não pode estar vazia",
+    "palindromeLength": "String deve ter no máximo 200 caracteres",
+    "palindromeInvalidChars": "String deve conter apenas caracteres ASCII imprimíveis",
+    "pricesRequired": "Array de preços não pode estar vazio",
+    "pricesInvalidNumbers": "Array deve conter apenas números não negativos separados por vírgula",
+    "pricesLength": "Array deve ter entre 1 e 100 elementos"
   },
   "home": {
     "title": "Algoritmos LeetCode Animados",
     "subtitle": "Visualize e aprenda algoritmos do LeetCode através de animações interativas educativas.",
     "categories": {
-      "arrays": "Arrays"
+      "arrays": "Arrays",
+      "strings": "Strings"
     },
     "algorithms": {
       "twoSum": {
@@ -28,12 +38,24 @@
         "description": "Encontre dois números em um array que somem um valor alvo específico."
       },
       "threeSum": {
-        "title": "Three Sum", 
+        "title": "Three Sum",
         "description": "Encontre todos os triplets únicos no array que somem zero."
       },
       "removeDuplicates": {
         "title": "Remove Duplicates from Sorted Array",
         "description": "Remova os elementos duplicados de um array ordenado in-place."
+      },
+      "reverseString": {
+        "title": "Reverse String",
+        "description": "Inverta uma string modificando o array de entrada in-place."
+      },
+      "validPalindrome": {
+        "title": "Valid Palindrome",
+        "description": "Verifique se uma string é um palíndromo válido após limpar caracteres não alfanuméricos."
+      },
+      "bestTimeToBuyAndSellStock": {
+        "title": "Best Time to Buy and Sell Stock",
+        "description": "Encontre o melhor momento para comprar e vender uma ação para maximizar o lucro."
       }
     },
     "difficulty": {
@@ -366,6 +388,349 @@
           "Retornar unique + 1 (quantidade de elementos únicos)"
         ]
       }
+    }
+  },
+  "reverseString": {
+    "title": "Reverse String",
+    "titleWithMethod": "Reverse String - {method}",
+    "backButton": "Voltar",
+    "category": "Strings • Fácil",
+    "methodSelector": "Método de Solução",
+    "selectMethod": "Selecione o método",
+    "methods": {
+      "twopointers": "Two Pointers",
+      "builtin": "Built-in Method"
+    },
+    "tags": {
+      "twoPointers": "#two-pointers",
+      "onTime": "#O(n)-tempo",
+      "o1Space": "#O(1)-espaço",
+      "inPlace": "#in-place",
+      "builtin": "#built-in",
+      "onSpace": "#O(n)-espaço"
+    },
+    "tabs": {
+      "description": "Descrição",
+      "code": "Código",
+      "solution": "Solução"
+    },
+    "description": {
+      "title": "Enunciado do Problema",
+      "problem": "Escreva uma função que inverta uma string. A string de entrada é dada como um array de caracteres s.",
+      "clarification": "Você deve fazer isso modificando o array de entrada in-place com espaço extra O(1).",
+      "examples": "Exemplos",
+      "example1": "Exemplo 1",
+      "example2": "Exemplo 2",
+      "input": "Entrada",
+      "output": "Saída",
+      "constraints": "Restrições",
+      "constraint1": "1 ≤ s.length ≤ 10⁵",
+      "constraint2": "s[i] é um caractere ASCII imprimível",
+      "followUp": "Pergunta de Acompanhamento",
+      "followUpText": "Você consegue fazer isso usando apenas O(1) de espaço extra?"
+    },
+    "code": {
+      "implementations": "Implementações - {method}",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copiar",
+      "algorithmExplanation": "Explicação do Algoritmo - {method}",
+      "approach": "Abordagem",
+      "complexity": "Complexidade",
+      "time": "Tempo",
+      "space": "Espaço",
+      "steps": "Passos do Algoritmo"
+    },
+    "preview": {
+      "title": "Prévia da Animação - {method}",
+      "array": "s = [{chars}]",
+      "status": {
+        "clickToView": "Clique na aba Solução para ver a visualização",
+        "twopointers": "Two Pointers",
+        "builtin": "Built-in Method"
+      }
+    },
+    "solution": {
+      "title": "Visualização do Algoritmo",
+      "execute": "Executar",
+      "pause": "Pausar",
+      "resume": "Continuar",
+      "restart": "Reiniciar",
+      "nextStep": "Próximo Passo",
+      "reset": "Resetar",
+      "speed": "Velocidade",
+      "customize": "Personalizar",
+      "speedOptions": {
+        "slow": "Lento",
+        "normal": "Normal",
+        "fast": "Rápido"
+      },
+      "customization": {
+        "title": "Personalizar Exemplo",
+        "stringLabel": "Caracteres (separados por vírgula)",
+        "apply": "Aplicar",
+        "applied": "Personalização aplicada!"
+      },
+      "visualization": "Visualização",
+      "currentStatus": "Status Atual",
+      "performanceMetrics": "Métricas de Performance",
+      "operations": "Operações",
+      "swaps": "Trocas",
+      "timeComplexity": "Complexidade Tempo",
+      "spaceComplexity": "Complexidade Espaço",
+      "predefinedExamples": "Exemplos Pré-definidos",
+      "example": "Exemplo",
+      "waitingToStart": "Aguardando início",
+      "initializingPointers": "Inicializando ponteiros left=0 e right={right}",
+      "comparing": "Comparando posições {left} e {right}: '{leftVal}' e '{rightVal}'",
+      "swapping": "Trocando '{leftVal}' e '{rightVal}' nas posições {left} e {right}",
+      "movingPointers": "Movendo ponteiros: left={left}, right={right}",
+      "finished": "Algoritmo finalizado! String invertida com sucesso",
+      "usingBuiltin": "Usando método built-in reverse()"
+    },
+    "algorithmExplanations": {
+      "twopointers": {
+        "description": "Esta solução utiliza dois ponteiros: um no início (left) e outro no fim (right) do array. Troca os elementos e move os ponteiros até se encontrarem no meio.",
+        "complexity": {
+          "time": "O(n) - onde n é o comprimento da string",
+          "space": "O(1) - apenas espaço constante extra é usado"
+        },
+        "steps": [
+          "Inicializar ponteiro left = 0 e right = s.length - 1",
+          "Enquanto left < right:",
+          "• Trocar s[left] com s[right]",
+          "• Incrementar left",
+          "• Decrementar right",
+          "String está invertida"
+        ]
+      },
+      "builtin": {
+        "description": "Esta solução utiliza o método built-in reverse() que inverte o array in-place.",
+        "complexity": {
+          "time": "O(n) - onde n é o comprimento da string",
+          "space": "O(n) - devido à implementação interna"
+        },
+        "steps": [
+          "Chamar s.reverse()",
+          "String está invertida"
+        ]
+      }
+    }
+  },
+  "validPalindrome": {
+    "title": "Valid Palindrome",
+    "backButton": "Voltar",
+    "category": "Strings • Fácil",
+    "tags": {
+      "twoPointers": "#two-pointers",
+      "onTime": "#O(n)-tempo",
+      "o1Space": "#O(1)-espaço",
+      "string": "#string"
+    },
+    "tabs": {
+      "description": "Descrição",
+      "code": "Código",
+      "solution": "Solução"
+    },
+    "description": {
+      "title": "Enunciado do Problema",
+      "problem": "Uma frase é um palíndromo se, após converter todas as letras maiúsculas em minúsculas e remover todos os caracteres não alfanuméricos, ela se lê da mesma forma de trás para frente. Caracteres alfanuméricos incluem letras e números.",
+      "clarification": "Dado uma string s, retorne true se for um palíndromo, ou false caso contrário.",
+      "examples": "Exemplos",
+      "example1": "Exemplo 1",
+      "example2": "Exemplo 2",
+      "example3": "Exemplo 3",
+      "input": "Entrada",
+      "output": "Saída",
+      "explanation": "Explicação",
+      "example1Explanation": "\"amanaplanacanalpanama\" é um palíndromo.",
+      "example2Explanation": "\"raceacar\" não é um palíndromo.",
+      "example3Explanation": "s é uma string vazia após remover caracteres não alfanuméricos. Como uma string vazia se lê da mesma forma de trás para frente, é um palíndromo.",
+      "constraints": "Restrições",
+      "constraint1": "1 ≤ s.length ≤ 2 * 10⁵",
+      "constraint2": "s consiste apenas de caracteres ASCII imprimíveis"
+    },
+    "code": {
+      "implementations": "Implementações",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copiado!",
+      "algorithmExplanation": "Explicação do Algoritmo",
+      "approach": "Abordagem",
+      "complexity": "Complexidade",
+      "time": "Tempo",
+      "space": "Espaço",
+      "steps": "Passos do Algoritmo"
+    },
+    "preview": {
+      "title": "Prévia da Animação",
+      "string": "s = \"{str}\"",
+      "status": {
+        "clickToView": "Clique na aba Solução para ver a visualização"
+      }
+    },
+    "solution": {
+      "title": "Visualização do Algoritmo",
+      "execute": "Executar",
+      "pause": "Pausar",
+      "resume": "Continuar",
+      "restart": "Reiniciar",
+      "nextStep": "Próximo Passo",
+      "reset": "Resetar",
+      "speed": "Velocidade",
+      "customize": "Personalizar",
+      "speedOptions": {
+        "slow": "Lento",
+        "normal": "Normal",
+        "fast": "Rápido"
+      },
+      "customization": {
+        "stringLabel": "String",
+        "apply": "Aplicar",
+        "applied": "Personalização aplicada!"
+      },
+      "visualization": "Visualização",
+      "originalString": "String Original",
+      "cleanedString": "String Limpa",
+      "currentStatus": "Status Atual",
+      "performanceMetrics": "Métricas de Performance",
+      "operations": "Operações",
+      "comparisons": "Comparações",
+      "timeComplexity": "Complexidade Tempo",
+      "spaceComplexity": "Complexidade Espaço",
+      "predefinedExamples": "Exemplos Pré-definidos",
+      "example": "Exemplo",
+      "waitingToStart": "Aguardando início",
+      "cleaning": "Limpando string: '{cleaned}'",
+      "initializingPointers": "Inicializando ponteiros left=0 e right={right}",
+      "comparing": "Comparando posições {left} e {right}: '{leftChar}' e '{rightChar}'",
+      "match": "Caracteres '{leftChar}' e '{rightChar}' correspondem",
+      "notPalindrome": "'{leftChar}' ≠ '{rightChar}' - Não é um palíndromo!",
+      "movingPointers": "Movendo ponteiros: left={left}, right={right}",
+      "isPalindrome": "É um palíndromo válido!",
+      "resultPalindrome": "✓ A string É um palíndromo",
+      "resultNotPalindrome": "✗ A string NÃO é um palíndromo"
+    },
+    "algorithmExplanation": {
+      "description": "Esta solução primeiro limpa a string removendo caracteres não alfanuméricos e convertendo para minúsculas. Depois usa dois ponteiros para comparar caracteres do início e fim da string.",
+      "complexity": {
+        "time": "O(n) - onde n é o comprimento da string",
+        "space": "O(n) - para armazenar a string limpa"
+      },
+      "steps": [
+        "Limpar a string (remover não-alfanuméricos e converter para minúsculas)",
+        "Inicializar ponteiros left=0 e right=length-1",
+        "Enquanto left < right:",
+        "• Se cleaned[left] != cleaned[right]: retornar false",
+        "• Incrementar left e decrementar right",
+        "Retornar true (é um palíndromo)"
+      ]
+    }
+  },
+  "bestTimeToBuyAndSellStock": {
+    "title": "Best Time to Buy and Sell Stock",
+    "backButton": "Voltar",
+    "category": "Arrays • Fácil",
+    "tags": {
+      "array": "#array",
+      "dp": "#dynamic-programming",
+      "onTime": "#O(n)-tempo",
+      "o1Space": "#O(1)-espaço"
+    },
+    "tabs": {
+      "description": "Descrição",
+      "code": "Código",
+      "solution": "Solução"
+    },
+    "description": {
+      "title": "Enunciado do Problema",
+      "problem": "Você recebe um array prices onde prices[i] é o preço de uma determinada ação no i-ésimo dia.",
+      "clarification": "Você quer maximizar seu lucro escolhendo um único dia para comprar uma ação e escolhendo um dia diferente no futuro para vender essa ação. Retorne o lucro máximo que você pode obter com esta transação. Se você não puder obter nenhum lucro, retorne 0.",
+      "examples": "Exemplos",
+      "example1": "Exemplo 1",
+      "example2": "Exemplo 2",
+      "input": "Entrada",
+      "output": "Saída",
+      "explanation": "Explicação",
+      "example1Explanation": "Compre no dia 2 (preço = 1) e venda no dia 5 (preço = 6), lucro = 6-1 = 5. Note que comprar no dia 2 e vender no dia 1 não é permitido porque você deve comprar antes de vender.",
+      "example2Explanation": "Neste caso, nenhuma transação é feita e o lucro máximo = 0.",
+      "constraints": "Restrições",
+      "constraint1": "1 ≤ prices.length ≤ 10⁵",
+      "constraint2": "0 ≤ prices[i] ≤ 10⁴"
+    },
+    "code": {
+      "implementations": "Implementações",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copiado!",
+      "algorithmExplanation": "Explicação do Algoritmo",
+      "approach": "Abordagem",
+      "complexity": "Complexidade",
+      "time": "Tempo",
+      "space": "Espaço",
+      "steps": "Passos do Algoritmo"
+    },
+    "preview": {
+      "title": "Prévia da Animação",
+      "prices": "prices = [{prices}]",
+      "status": {
+        "clickToView": "Clique na aba Solução para ver a visualização"
+      }
+    },
+    "solution": {
+      "title": "Visualização do Algoritmo",
+      "execute": "Executar",
+      "pause": "Pausar",
+      "resume": "Continuar",
+      "restart": "Reiniciar",
+      "nextStep": "Próximo Passo",
+      "reset": "Resetar",
+      "speed": "Velocidade",
+      "customize": "Personalizar",
+      "speedOptions": {
+        "slow": "Lento",
+        "normal": "Normal",
+        "fast": "Rápido"
+      },
+      "customization": {
+        "pricesLabel": "Preços (separados por vírgula)",
+        "apply": "Aplicar",
+        "applied": "Personalização aplicada!"
+      },
+      "visualization": "Visualização",
+      "currentStatus": "Status Atual",
+      "performanceMetrics": "Métricas de Performance",
+      "operations": "Operações",
+      "comparisons": "Comparações",
+      "timeComplexity": "Complexidade Tempo",
+      "spaceComplexity": "Complexidade Espaço",
+      "predefinedExamples": "Exemplos Pré-definidos",
+      "example": "Exemplo",
+      "minPrice": "Preço Mínimo",
+      "maxProfit": "Lucro Máximo",
+      "waitingToStart": "Aguardando início",
+      "initializing": "Inicializando: minPrice=∞, maxProfit=0",
+      "checkingDay": "Verificando dia {day}: preço={price}",
+      "newMinPrice": "Novo preço mínimo encontrado no dia {day}: {price}",
+      "calculatingProfit": "Calculando lucro: {price} - {minPrice} = {profit}",
+      "newMaxProfit": "Novo lucro máximo! Comprar dia {buyDay}, vender dia {sellDay}, lucro={profit}",
+      "finished": "Melhor negócio: Comprar dia {buyDay}, vender dia {sellDay}, lucro máximo = {profit}",
+      "finishedNoProfit": "Nenhum lucro possível com estes preços"
+    },
+    "algorithmExplanation": {
+      "description": "Esta solução percorre o array uma vez, mantendo o preço mínimo visto até agora e o lucro máximo possível. Para cada preço, calcula o lucro potencial e atualiza o máximo se necessário.",
+      "complexity": {
+        "time": "O(n) - onde n é o número de dias",
+        "space": "O(1) - apenas variáveis constantes são usadas"
+      },
+      "steps": [
+        "Inicializar minPrice = ∞ e maxProfit = 0",
+        "Para cada preço no array:",
+        "• Se preço < minPrice: atualizar minPrice",
+        "• Caso contrário: calcular lucro = preço - minPrice",
+        "  - Se lucro > maxProfit: atualizar maxProfit",
+        "Retornar maxProfit"
+      ]
     }
   }
 } 
