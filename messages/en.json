@@ -14,13 +14,23 @@
     "arrayInvalidNumbers": "Array must contain only numbers separated by commas",
     "arrayMinElements": "Array must have at least 2 elements",
     "targetRequired": "Target cannot be empty",
-    "targetInvalid": "Target must be a valid number"
+    "targetInvalid": "Target must be a valid number",
+    "stringRequired": "String cannot be empty",
+    "stringInvalidChars": "String must contain only letters separated by commas",
+    "stringLength": "String must be between 1 and 1000 characters",
+    "palindromeRequired": "String cannot be empty",
+    "palindromeLength": "String must be at most 200 characters",
+    "palindromeInvalidChars": "String must contain only printable ASCII characters",
+    "pricesRequired": "Prices array cannot be empty",
+    "pricesInvalidNumbers": "Array must contain only non-negative numbers separated by commas",
+    "pricesLength": "Array must have between 1 and 100 elements"
   },
   "home": {
     "title": "Animated LeetCode Algorithms",
     "subtitle": "Visualize and learn LeetCode algorithms through interactive educational animations.",
     "categories": {
-      "arrays": "Arrays"
+      "arrays": "Arrays",
+      "strings": "Strings"
     },
     "algorithms": {
       "twoSum": {
@@ -34,6 +44,18 @@
       "removeDuplicates": {
         "title": "Remove Duplicates from Sorted Array",
         "description": "Remove duplicate elements from a sorted array in-place."
+      },
+      "reverseString": {
+        "title": "Reverse String",
+        "description": "Reverse a string by modifying the input array in-place."
+      },
+      "validPalindrome": {
+        "title": "Valid Palindrome",
+        "description": "Check if a string is a valid palindrome after cleaning non-alphanumeric characters."
+      },
+      "bestTimeToBuyAndSellStock": {
+        "title": "Best Time to Buy and Sell Stock",
+        "description": "Find the best time to buy and sell a stock to maximize profit."
       }
     },
     "difficulty": {
@@ -366,6 +388,349 @@
           "Return unique + 1 (count of unique elements)"
         ]
       }
+    }
+  },
+  "reverseString": {
+    "title": "Reverse String",
+    "titleWithMethod": "Reverse String - {method}",
+    "backButton": "Back",
+    "category": "Strings • Easy",
+    "methodSelector": "Solution Method",
+    "selectMethod": "Select method",
+    "methods": {
+      "twopointers": "Two Pointers",
+      "builtin": "Built-in Method"
+    },
+    "tags": {
+      "twoPointers": "#two-pointers",
+      "onTime": "#O(n)-time",
+      "o1Space": "#O(1)-space",
+      "inPlace": "#in-place",
+      "builtin": "#built-in",
+      "onSpace": "#O(n)-space"
+    },
+    "tabs": {
+      "description": "Description",
+      "code": "Code",
+      "solution": "Solution"
+    },
+    "description": {
+      "title": "Problem Statement",
+      "problem": "Write a function that reverses a string. The input string is given as an array of characters s.",
+      "clarification": "You must do this by modifying the input array in-place with O(1) extra memory.",
+      "examples": "Examples",
+      "example1": "Example 1",
+      "example2": "Example 2",
+      "input": "Input",
+      "output": "Output",
+      "constraints": "Constraints",
+      "constraint1": "1 ≤ s.length ≤ 10⁵",
+      "constraint2": "s[i] is a printable ASCII character",
+      "followUp": "Follow-up",
+      "followUpText": "Can you do this using only O(1) extra space?"
+    },
+    "code": {
+      "implementations": "Implementations - {method}",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copied!",
+      "algorithmExplanation": "Algorithm Explanation - {method}",
+      "approach": "Approach",
+      "complexity": "Complexity",
+      "time": "Time",
+      "space": "Space",
+      "steps": "Algorithm Steps"
+    },
+    "preview": {
+      "title": "Animation Preview - {method}",
+      "array": "s = [{chars}]",
+      "status": {
+        "clickToView": "Click on Solution tab to see visualization",
+        "twopointers": "Two Pointers",
+        "builtin": "Built-in Method"
+      }
+    },
+    "solution": {
+      "title": "Algorithm Visualization",
+      "execute": "Execute",
+      "pause": "Pause",
+      "resume": "Resume",
+      "restart": "Restart",
+      "nextStep": "Next Step",
+      "reset": "Reset",
+      "speed": "Speed",
+      "customize": "Customize",
+      "speedOptions": {
+        "slow": "Slow",
+        "normal": "Normal",
+        "fast": "Fast"
+      },
+      "customization": {
+        "title": "Customize Example",
+        "stringLabel": "Characters (comma separated)",
+        "apply": "Apply",
+        "applied": "Customization applied!"
+      },
+      "visualization": "Visualization",
+      "currentStatus": "Current Status",
+      "performanceMetrics": "Performance Metrics",
+      "operations": "Operations",
+      "swaps": "Swaps",
+      "timeComplexity": "Time Complexity",
+      "spaceComplexity": "Space Complexity",
+      "predefinedExamples": "Predefined Examples",
+      "example": "Example",
+      "waitingToStart": "Waiting to start",
+      "initializingPointers": "Initializing pointers left=0 and right={right}",
+      "comparing": "Comparing positions {left} and {right}: '{leftVal}' and '{rightVal}'",
+      "swapping": "Swapping '{leftVal}' and '{rightVal}' at positions {left} and {right}",
+      "movingPointers": "Moving pointers: left={left}, right={right}",
+      "finished": "Algorithm finished! String reversed successfully",
+      "usingBuiltin": "Using built-in reverse() method"
+    },
+    "algorithmExplanations": {
+      "twopointers": {
+        "description": "This solution uses two pointers: one at the beginning (left) and another at the end (right) of the array. Swap elements and move pointers until they meet in the middle.",
+        "complexity": {
+          "time": "O(n) - where n is the length of the string",
+          "space": "O(1) - only constant extra space is used"
+        },
+        "steps": [
+          "Initialize pointer left = 0 and right = s.length - 1",
+          "While left < right:",
+          "• Swap s[left] with s[right]",
+          "• Increment left",
+          "• Decrement right",
+          "String is reversed"
+        ]
+      },
+      "builtin": {
+        "description": "This solution uses the built-in reverse() method that reverses the array in-place.",
+        "complexity": {
+          "time": "O(n) - where n is the length of the string",
+          "space": "O(n) - due to internal implementation"
+        },
+        "steps": [
+          "Call s.reverse()",
+          "String is reversed"
+        ]
+      }
+    }
+  },
+  "validPalindrome": {
+    "title": "Valid Palindrome",
+    "backButton": "Back",
+    "category": "Strings • Easy",
+    "tags": {
+      "twoPointers": "#two-pointers",
+      "onTime": "#O(n)-time",
+      "o1Space": "#O(1)-space",
+      "string": "#string"
+    },
+    "tabs": {
+      "description": "Description",
+      "code": "Code",
+      "solution": "Solution"
+    },
+    "description": {
+      "title": "Problem Statement",
+      "problem": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.",
+      "clarification": "Given a string s, return true if it is a palindrome, or false otherwise.",
+      "examples": "Examples",
+      "example1": "Example 1",
+      "example2": "Example 2",
+      "example3": "Example 3",
+      "input": "Input",
+      "output": "Output",
+      "explanation": "Explanation",
+      "example1Explanation": "\"amanaplanacanalpanama\" is a palindrome.",
+      "example2Explanation": "\"raceacar\" is not a palindrome.",
+      "example3Explanation": "s is an empty string after removing non-alphanumeric characters. Since an empty string reads the same forward and backward, it is a palindrome.",
+      "constraints": "Constraints",
+      "constraint1": "1 ≤ s.length ≤ 2 * 10⁵",
+      "constraint2": "s consists only of printable ASCII characters"
+    },
+    "code": {
+      "implementations": "Implementations",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copied!",
+      "algorithmExplanation": "Algorithm Explanation",
+      "approach": "Approach",
+      "complexity": "Complexity",
+      "time": "Time",
+      "space": "Space",
+      "steps": "Algorithm Steps"
+    },
+    "preview": {
+      "title": "Animation Preview",
+      "string": "s = \"{str}\"",
+      "status": {
+        "clickToView": "Click on Solution tab to see visualization"
+      }
+    },
+    "solution": {
+      "title": "Algorithm Visualization",
+      "execute": "Execute",
+      "pause": "Pause",
+      "resume": "Resume",
+      "restart": "Restart",
+      "nextStep": "Next Step",
+      "reset": "Reset",
+      "speed": "Speed",
+      "customize": "Customize",
+      "speedOptions": {
+        "slow": "Slow",
+        "normal": "Normal",
+        "fast": "Fast"
+      },
+      "customization": {
+        "stringLabel": "String",
+        "apply": "Apply",
+        "applied": "Customization applied!"
+      },
+      "visualization": "Visualization",
+      "originalString": "Original String",
+      "cleanedString": "Cleaned String",
+      "currentStatus": "Current Status",
+      "performanceMetrics": "Performance Metrics",
+      "operations": "Operations",
+      "comparisons": "Comparisons",
+      "timeComplexity": "Time Complexity",
+      "spaceComplexity": "Space Complexity",
+      "predefinedExamples": "Predefined Examples",
+      "example": "Example",
+      "waitingToStart": "Waiting to start",
+      "cleaning": "Cleaning string: '{cleaned}'",
+      "initializingPointers": "Initializing pointers left=0 and right={right}",
+      "comparing": "Comparing positions {left} and {right}: '{leftChar}' and '{rightChar}'",
+      "match": "Characters '{leftChar}' and '{rightChar}' match",
+      "notPalindrome": "'{leftChar}' ≠ '{rightChar}' - Not a palindrome!",
+      "movingPointers": "Moving pointers: left={left}, right={right}",
+      "isPalindrome": "Is a valid palindrome!",
+      "resultPalindrome": "✓ The string IS a palindrome",
+      "resultNotPalindrome": "✗ The string is NOT a palindrome"
+    },
+    "algorithmExplanation": {
+      "description": "This solution first cleans the string by removing non-alphanumeric characters and converting to lowercase. Then uses two pointers to compare characters from the beginning and end of the string.",
+      "complexity": {
+        "time": "O(n) - where n is the length of the string",
+        "space": "O(n) - to store the cleaned string"
+      },
+      "steps": [
+        "Clean the string (remove non-alphanumeric and convert to lowercase)",
+        "Initialize pointers left=0 and right=length-1",
+        "While left < right:",
+        "• If cleaned[left] != cleaned[right]: return false",
+        "• Increment left and decrement right",
+        "Return true (is a palindrome)"
+      ]
+    }
+  },
+  "bestTimeToBuyAndSellStock": {
+    "title": "Best Time to Buy and Sell Stock",
+    "backButton": "Back",
+    "category": "Arrays • Easy",
+    "tags": {
+      "array": "#array",
+      "dp": "#dynamic-programming",
+      "onTime": "#O(n)-time",
+      "o1Space": "#O(1)-space"
+    },
+    "tabs": {
+      "description": "Description",
+      "code": "Code",
+      "solution": "Solution"
+    },
+    "description": {
+      "title": "Problem Statement",
+      "problem": "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+      "clarification": "You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+      "examples": "Examples",
+      "example1": "Example 1",
+      "example2": "Example 2",
+      "input": "Input",
+      "output": "Output",
+      "explanation": "Explanation",
+      "example1Explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.",
+      "example2Explanation": "In this case, no transactions are done and the max profit = 0.",
+      "constraints": "Constraints",
+      "constraint1": "1 ≤ prices.length ≤ 10⁵",
+      "constraint2": "0 ≤ prices[i] ≤ 10⁴"
+    },
+    "code": {
+      "implementations": "Implementations",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "copy": "Copied!",
+      "algorithmExplanation": "Algorithm Explanation",
+      "approach": "Approach",
+      "complexity": "Complexity",
+      "time": "Time",
+      "space": "Space",
+      "steps": "Algorithm Steps"
+    },
+    "preview": {
+      "title": "Animation Preview",
+      "prices": "prices = [{prices}]",
+      "status": {
+        "clickToView": "Click on Solution tab to see visualization"
+      }
+    },
+    "solution": {
+      "title": "Algorithm Visualization",
+      "execute": "Execute",
+      "pause": "Pause",
+      "resume": "Resume",
+      "restart": "Restart",
+      "nextStep": "Next Step",
+      "reset": "Reset",
+      "speed": "Speed",
+      "customize": "Customize",
+      "speedOptions": {
+        "slow": "Slow",
+        "normal": "Normal",
+        "fast": "Fast"
+      },
+      "customization": {
+        "pricesLabel": "Prices (comma separated)",
+        "apply": "Apply",
+        "applied": "Customization applied!"
+      },
+      "visualization": "Visualization",
+      "currentStatus": "Current Status",
+      "performanceMetrics": "Performance Metrics",
+      "operations": "Operations",
+      "comparisons": "Comparisons",
+      "timeComplexity": "Time Complexity",
+      "spaceComplexity": "Space Complexity",
+      "predefinedExamples": "Predefined Examples",
+      "example": "Example",
+      "minPrice": "Min Price",
+      "maxProfit": "Max Profit",
+      "waitingToStart": "Waiting to start",
+      "initializing": "Initializing: minPrice=∞, maxProfit=0",
+      "checkingDay": "Checking day {day}: price={price}",
+      "newMinPrice": "New minimum price found on day {day}: {price}",
+      "calculatingProfit": "Calculating profit: {price} - {minPrice} = {profit}",
+      "newMaxProfit": "New maximum profit! Buy day {buyDay}, sell day {sellDay}, profit={profit}",
+      "finished": "Best deal: Buy day {buyDay}, sell day {sellDay}, max profit = {profit}",
+      "finishedNoProfit": "No profit possible with these prices"
+    },
+    "algorithmExplanation": {
+      "description": "This solution iterates through the array once, keeping track of the minimum price seen so far and the maximum profit possible. For each price, it calculates the potential profit and updates the maximum if necessary.",
+      "complexity": {
+        "time": "O(n) - where n is the number of days",
+        "space": "O(1) - only constant variables are used"
+      },
+      "steps": [
+        "Initialize minPrice = ∞ and maxProfit = 0",
+        "For each price in the array:",
+        "• If price < minPrice: update minPrice",
+        "• Otherwise: calculate profit = price - minPrice",
+        "  - If profit > maxProfit: update maxProfit",
+        "Return maxProfit"
+      ]
     }
   }
 } 
